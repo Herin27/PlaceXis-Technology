@@ -1,0 +1,154 @@
+/* Global font and reset */
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+}
+
+/* Toggle Menu Icon */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #111;
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap:  0px;
+}
+
+.navbar-left img {
+  width: auto;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e1e2f;
+}
+
+/* Nav Menu */
+.navbar-menu {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 450;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+  color: #08389C;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  font-size: 14px;
+}
+
+.phone {
+  font-weight: 450;
+  color: #444;
+  font-size: 14px;
+}
+
+.get-started-btn {
+  padding: 0.5em 1em;
+  background-color: #08389C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.get-started-btn:hover {
+  background-color: #fff;
+  color: #2475f7;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 250px;
+    background: #fff;
+    flex-direction: column;
+    padding: 2em 1.5em;
+    gap: 1.5em;
+    transition: 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+
+  .navbar-menu.show {
+    left: 0;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .mobile-contact {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}

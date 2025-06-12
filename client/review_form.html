@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/review.css">
+    <title>Review</title>
+</head>
+<body>
+    <section id="review-form-section">
+  <h2>Submit a Review</h2>
+  <form id="reviewForm">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    
+    <select name="rating" required>
+      <option value="">Select Rating</option>
+      <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+      <option value="4">⭐⭐⭐⭐ - Good</option>
+      <option value="3">⭐⭐⭐ - Average</option>
+      <option value="2">⭐⭐ - Poor</option>
+      <option value="1">⭐ - Terrible</option>
+    </select>
+    
+    <textarea name="message" placeholder="Write your review..." required></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+
+  <p id="reviewResponse"></p>
+</section>
+
+<script>
+  document.getElementById("reviewForm").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const res = await fetch("/api/submit-review", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      document.getElementById("reviewResponse").textContent = result.message;
+      this.reset();
+    } catch (error) {
+      document.getElementById("reviewResponse").textContent = "❌ Failed to submit review.";
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+/* Global font and reset */
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+}
+
+/* Toggle Menu Icon */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #111;
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap:  0px;
+}
+
+.navbar-left img {
+  width: auto;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e1e2f;
+}
+
+/* Nav Menu */
+.navbar-menu {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 450;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+  color: #08389C;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  font-size: 14px;
+}
+
+.phone {
+  font-weight: 450;
+  color: #444;
+  font-size: 14px;
+}
+
+.get-started-btn {
+  padding: 0.5em 1em;
+  background-color: #08389C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.get-started-btn:hover {
+  background-color: #fff;
+  color: #2475f7;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+
+.hero {
+  background-color: #0047ab;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px 40px;
+  height: 250px;
+  text-align: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  margin-bottom: 10px;
+  font-size: 52px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.mission-section {
+  padding: 60px 20px;
+  display: flex;
+  gap: 50px;
+  background: #ffffff;
+  max-width: 1400px;
+  margin: auto;
+  height: 300px;
+  margin-top: 50px;
+}
+
+.mission {
+  max-width: 700px;
+  gap: 20px;
+}
+.mission h2 {
+  color: #111827;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+.mission p {
+  color: #000;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-box {
+  background-color: #f1f3f9;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+}
+
+.stat-box strong {
+  font-size: 28px;
+  color: #0047ab;
+}
+
+.core-values {
+  background: #f9fafc;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.core-values h2 {
+  margin-bottom: 10px;
+  font-size: 42px;
+  color: #111827;
+}
+
+.core-values p {
+  margin-bottom: 40px;
+  color: #555;
+  font-size: 18px;
+}
+
+.value-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.value-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 280px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+.value-box img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+.value-box h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #0047ab;
+}
+
+.value-box p {
+  color: #555;
+}
+
+.experience-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  background: #fff;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.experience-image img {
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.experience-text {
+  max-width: 500px;
+}
+
+.experience-text h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.experience-text ul {
+  padding-left: 20px;
+}
+
+.experience-text li {
+  margin-bottom: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 250px;
+    background: #fff;
+    flex-direction: column;
+    padding: 2em 1.5em;
+    gap: 1.5em;
+    transition: 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+
+  .navbar-menu.show {
+    left: 0;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .mobile-contact {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}

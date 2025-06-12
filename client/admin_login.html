@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #fff, #f8f9fa);
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background: #fff;
+      border-radius: 10px;
+      padding: 40px 30px;
+      width: 360px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+
+    .login-container h2 {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .login-container p {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .input-group {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #5e74c2;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .error-msg {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <p>Enter your credentials to access the admin dashboard</p>
+
+    <div class="input-group">
+      <label for="admin-id">Admin ID</label>
+      <input type="text" id="admin-id" placeholder="Enter your admin ID" />
+    </div>
+
+    <div class="input-group">
+      <label for="admin-password">Password</label>
+      <input type="password" id="admin-password" placeholder="Enter your password" />
+    </div>
+
+    <button class="login-btn" onclick="handleLogin()">Login</button>
+
+    <div class="error-msg" id="error-msg">Invalid Admin ID or Password</div>
+  </div>
+
+  <script>
+    function handleLogin() {
+      const adminId = document.getElementById("admin-id").value.trim();
+      const adminPass = document.getElementById("admin-password").value.trim();
+      const errorMsg = document.getElementById("error-msg");
+
+      // Static credentials
+      const validAdminId = "admin123";
+      const validPassword = "pass123";
+
+      if (adminId === validAdminId && adminPass === validPassword) {
+        window.location.href = "./admin.html"; // redirect
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="./css/admin.css" />
+</head>
+<body>
+  <div class="top-bar">
+    <div>
+      <h1>Admin Dashboard</h1>
+      <p>Manage your website’s backend and content</p>
+    </div>
+    <button class="logout-btn"><a href="./admin_login.html">Logout</a></button>
+  </div>
+
+  <nav class="navbar">
+    <button class="nav-item active" onclick="showSection('dashboard')">📊 Dashboard</button>
+    <button class="nav-item" onclick="showSection('users')">👥 Users</button>
+    <button class="nav-item" onclick="showSection('sliders')">🖼️ Sliders</button>
+    <button class="nav-item" onclick="showSection('adminReviews')">📝 Reviews</button>
+    <button class="nav-item" onclick="showSection('contacts')">📞 Contacts</button>
+  </nav>
+
+  <main>
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="content-section">
+      <h2>Dashboard Overview</h2>
+      <p>Key metrics and system status at a glance</p>
+      <div class="overview">
+        <div class="card">
+          <h3>Total Users</h3>
+          <div class="count" id="userCount">0</div>
+          <span class="success" id="userGain">+0 from last month</span>
+        </div>
+        <div class="card">
+          <h3>Active Sliders</h3>
+          <div class="count" id="sliderCount">0</div>
+          <span class="success" id="sliderGain">+0 from last month</span>
+        </div>
+        <div class="card">
+          <h3>Pending Reviews</h3>
+          <div class="count" id="reviewCount">0</div>
+          <span class="warning" id="reviewGain">+0 from last month</span>
+        </div>
+        <div class="card">
+          <h3>Contact Messages</h3>
+          <div class="count" id="messageCount">0</div>
+          <span class="info" id="messageGain">+0 from last month</span>
+        </div>
+      </div>
+
+      <section class="bottom-section">
+        <div class="recent">
+          <h3>Recent Activity</h3>
+          <ul>
+            <li><span class="dot green"></span> New user registered <span class="time">2 minutes ago</span></li>
+            <li><span class="dot blue"></span> Slider updated <span class="time">15 minutes ago</span></li>
+            <li><span class="dot yellow"></span> Review pending approval <span class="time">1 hour ago</span></li>
+          </ul>
+        </div>
+        <div class="actions">
+          <h3>Quick Actions</h3>
+          <button class="action-btn primary" onclick="showSection('sliders')">Add New Slider</button>
+          <button class="action-btn" onclick="showSection('contacts')">Review Messages</button>
+          <h1>Export Data</h1>
+          <div class="export-buttons">
+            <button onclick="window.location.href='/api/export-users'">Export Users</button>
+            <button onclick="window.location.href='/api/export-sliders'">Export Sliders</button>
+            <button onclick="window.location.href='/api/export-reviews'">Export Reviews</button>
+            <button onclick="window.location.href='/api/export-contacts'">Export Contacts</button>
+          </div>
+
+        </div>
+      </section>
+    </section>
+
+    <!-- Users Section -->
+    <section id="users" class="content-section" style="display: none;">
+  <h2>User Management</h2>
+  <p>Manage registered users and their accounts</p>
+
+  <div class="user-card">
+    <h3>All Users</h3>
+    <input type="text" id="searchInput" placeholder="🔍 Search users..." onkeyup="filterUsers()" />
+
+    <div style="margin: 10px 0;">
+      Total Users: <span id="totalUsers">0</span>
+    </div>
+
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Experience</th>
+          <th>Role</th>
+          <th>Location</th>
+          <th>Resume</th>
+          <th>Signup Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="userTableBody">
+        <!-- Data will be injected here -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- slider section -->
+
+<section id="sliders" class="content-section" style="display: none;">
+  <h2>Slider Management</h2>
+  <p>Manage home page sliders</p>
+
+  <div class="slider-card">
+    <h3>All Sliders</h3>
+    <input type="text" id="sliderSearchInput" placeholder="🔍 Search sliders..." onkeyup="filterSliders()" />
+
+    <div style="margin: 10px 0;">
+      Total Sliders: <span id="totalSliders">0</span>
+    </div>
+
+    <table id="sliderTable">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="sliderTableBody">
+        <!-- Injected by JS -->
+      </tbody>
+    </table>
+  </div>
+<div id="editSliderModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <h3>Edit Slider</h3>
+    <form id="editSliderForm">
+      <input type="hidden" id="editSliderId" />
+      <input type="text" id="editTitle" placeholder="Slider Title" required />
+      <input type="text" id="editDescription" placeholder="Slider Description" required />
+      <input type="file" id="editImage" accept="image/*" />
+      <button type="submit">💾 Save Changes</button>
+      <button type="button" onclick="closeEditModal()">❌ Cancel</button>
+    </form>
+  </div>
+</div>
+
+<section id="addSliderSection">
+  <h3>Add New Slider</h3>
+  <form id="sliderForm" enctype="multipart/form-data">
+    <input type="text" name="title" placeholder="Slider Title" required />
+    <input type="text" name="description" placeholder="Slider Description" required />
+    <input type="file" name="image" accept="image/*" required />
+    <button type="submit">➕ Add Slider</button>
+  </form>
+  <hr />
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Reviews Section -->
+    <section id="adminReviews" class="content-section" style="display: none;">
+  <h2>User Reviews</h2>
+  <p>All submitted reviews</p>
+  <div>Total Reviews: <span id="totalReviews">0</span></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Email</th><th>Rating</th><th>Message</th><th>Status</th><th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="reviewTableBody"></tbody>
+  </table>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Messages Section -->
+    <section id="contacts" class="content-section" style="display: none;">
+  <h2>Contact Messages</h2>
+  <p>All submitted contact forms</p>
+
+  <div>Total Contacts: <span id="totalContacts">0</span></div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th><th>Email</th><th>Phone</th><th>Message</th><th>Submitted</th>
+      </tr>
+    </thead>
+    <tbody id="contactTableBody"></tbody> <!-- THIS ID -->
+  </table>
+</section>
+
+
+
+
+
+
+
+
+    <!-- Settings Section -->
+    <section id="settings" class="content-section" style="display:none;">
+      <h2>System Settings</h2>
+      <p>Manage admin preferences and system configuration.</p>
+    </section>
+  </main>
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
+
+      // Remove active from all nav-items
+      document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+
+      // Show selected section
+      document.getElementById(sectionId).style.display = 'block';
+
+      // Set active nav
+      const activeBtn = Array.from(document.querySelectorAll('.nav-item'))
+        .find(btn => btn.textContent.toLowerCase().includes(sectionId));
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+  </script>
+  <script src="./js/admin.js"></script>
+</body>
+</html>

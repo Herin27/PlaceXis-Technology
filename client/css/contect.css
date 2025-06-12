@@ -1,0 +1,311 @@
+/* Global font and reset */
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+}
+
+/* Toggle Menu Icon */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #111;
+}
+
+/* Sticky Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap:  0px;
+}
+
+.navbar-left img {
+  width: auto;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e1e2f;
+}
+
+/* Nav Menu */
+.navbar-menu {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.navbar-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 450;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+  color: #08389C;
+}
+
+/* Right Section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  font-size: 14px;
+}
+
+.phone {
+  font-weight: 450;
+  color: #444;
+  font-size: 14px;
+}
+
+.get-started-btn {
+  padding: 0.5em 1em;
+  background-color: #08389C;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.get-started-btn:hover {
+  background-color: #fff;
+  color: #2475f7;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.hero {
+  background-color: #0047ab;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px 40px;
+  height: 250px;
+  text-align: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  margin-bottom: 10px;
+  font-size: 52px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.container {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.contact-form, .contact-info {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  flex: 1 1 45%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 600px;
+}
+
+.contact-form h2
+{
+  margin-bottom: 20px;
+}
+.contact-info h2 {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #000000;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 95%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  background: #002d87;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.whatsapp-box {
+  background: #e8fce8;
+  padding: 15px;
+  border: 1px solid #bbeebb;
+  margin-top: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 500px;
+  margin: 20px 0px;
+  display: flex;
+  width: 100%;
+}
+.whatsapp-box img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.whatsapp-box strong {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #002d87;
+}
+.whatsapp-box p {
+  font-size: 16px;
+  color: #333;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+.whatsapp-btn a {
+  color: white;
+  text-decoration: none;
+}
+
+.map-section {
+  text-align: center;
+  margin-top: 60px;
+}
+.map-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #002d87;
+}
+.map-section p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.map-box {
+  margin-top: 20px;
+  background: #e2e4ea;
+  padding: 40px;
+  border-radius: 50px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 250px;
+    background: #fff;
+    flex-direction: column;
+    padding: 2em 1.5em;
+    gap: 1.5em;
+    transition: 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+  }
+
+  .navbar-menu.show {
+    left: 0;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .mobile-contact {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+}
