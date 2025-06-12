@@ -110,6 +110,11 @@ body {
   color: #2475f7;
 }
 
+.get-started-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Hamburger Icon */
 .menu-icon {
   display: none;

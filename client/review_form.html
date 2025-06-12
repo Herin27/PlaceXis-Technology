@@ -1,56 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/review.css">
-    <title>Review</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/review.css">
+  <title>Review</title>
 </head>
+
 <body>
-    <section id="review-form-section">
-  <h2>Submit a Review</h2>
-  <form id="reviewForm">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    
-    <select name="rating" required>
-      <option value="">Select Rating</option>
-      <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
-      <option value="4">⭐⭐⭐⭐ - Good</option>
-      <option value="3">⭐⭐⭐ - Average</option>
-      <option value="2">⭐⭐ - Poor</option>
-      <option value="1">⭐ - Terrible</option>
-    </select>
-    
-    <textarea name="message" placeholder="Write your review..." required></textarea>
-    <button type="submit">Submit Review</button>
-  </form>
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left">
+        <img src="./images/logo.jpg" alt="Logo" class="logo" />
+        <span class="brand-name">PlaceXis Technology</span>
+      </div>
 
-  <p id="reviewResponse"></p>
-</section>
+      <div class="menu-icon" id="menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
 
-<script>
-  document.getElementById("reviewForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
+      <nav class="navbar-menu" id="navbar-menu">
+        <a href="./index.html">Home</a>
+        <a href="./about.html" class="active">About</a>
+        <a href="./services.html">Services</a>
+        <a href="./contect.html">Contact</a>
+        <div class="mobile-contact">
+          <span class="phone"><i class="fa fa-phone"></i> +18389382173</span>
+          <button class="get-started-btn"><a href="./register.html">Get Started</a></button>
+        </div>
+      </nav>
 
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData.entries());
 
-    try {
-      const res = await fetch("/api/submit-review", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
+    </div>
+  </header>
 
-      const result = await res.json();
-      document.getElementById("reviewResponse").textContent = result.message;
-      this.reset();
-    } catch (error) {
-      document.getElementById("reviewResponse").textContent = "❌ Failed to submit review.";
-    }
-  });
-</script>
+
+<section class="hero">
+    <h1>feedback Form</h1>
+    <p>Real people, real results. Hear from our clients who found their dream careers.</p>
+  </section>
+
+  <section id="review-form-section">
+    <h2>Submit a Review</h2>
+    <form id="reviewForm">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+
+      <select name="rating" required>
+        <option value="">Select Rating</option>
+        <option value="5">⭐⭐⭐⭐⭐ - Excellent</option>
+        <option value="4">⭐⭐⭐⭐ - Good</option>
+        <option value="3">⭐⭐⭐ - Average</option>
+        <option value="2">⭐⭐ - Poor</option>
+        <option value="1">⭐ - Terrible</option>
+      </select>
+
+      <textarea name="message" placeholder="Write your review..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <p id="reviewResponse"></p>
+  </section>
+
+  <!-- footer -->
+
+  <footer style="background-color: #0D1117; color: white; padding: 60px 20px; font-family: Arial, sans-serif;">
+    <div style="display: flex; flex-wrap: wrap; max-width: 1200px; margin: auto; justify-content: space-between;">
+
+      <!-- Logo and Description -->
+      <div style="flex: 1; min-width: 220px; margin-bottom: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="background-color: #1F6FEB; padding: 10px; border-radius: 8px;">
+            <img src="https://img.icons8.com/ios-filled/30/ffffff/conference-call.png" alt="icon" />
+          </div>
+          <h3 style="margin: 0;">PlaceXis Technology</h3>
+        </div>
+        <p style="margin-top: 15px; line-height: 1.6; color: #c9d1d9; font-weight: 200; font-size: 16px;">
+          Connecting talented professionals with their dream careers. We help you get hired faster with our
+          comprehensive placement services.
+        </p>
+        <div style="margin-top: 15px; display: flex; gap: 10px;">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/linkedin.png" alt="LinkedIn" />
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/twitter.png" alt="Twitter" />
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook.png" alt="Facebook" />
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div style="flex: 1; min-width: 150px; margin-bottom: 30px;">
+        <h4>Quick Links</h4>
+        <ul
+          style="list-style: none; padding: 0; line-height: 1.8; font-weight: 200; font-size: 16px; margin-top: 45px;">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Services</li>
+          <li>Contact</li>
+          <li>Register</li>
+        </ul>
+      </div>
+
+      <!-- Our Services -->
+      <div style="flex: 1; min-width: 180px; margin-bottom: 30px;">
+        <h4>Our Services</h4>
+        <ul
+          style="list-style: none; padding: 0; line-height: 1.8; font-weight: 200; font-size: 16px; margin-top: 45px;">
+          <li>Resume Optimization</li>
+          <li>Interview Coaching</li>
+          <li>Job Matching</li>
+          <li>Career Guidance</li>
+          <li>Skill Assessment</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="flex: 1; min-width: 220px; margin-bottom: 30px;">
+        <h4>Contact Info</h4>
+        <p style="line-height: 2; font-weight: 200; font-size: 16px; margin-top: 45px;"><img
+            src="https://img.icons8.com/ios-filled/16/1F6FEB/phone.png" alt="Phone" /> +18389382173</p>
+        <p style="line-height: 2; font-weight: 200; font-size: 16px; ">
+          <img src="https://img.icons8.com/ios-filled/16/1F6FEB/new-post.png" alt="Email" /> info@careerconnect.com
+        </p>
+        <p style="line-height: 2; font-weight: 200; font-size: 16px; "><img
+            src="https://img.icons8.com/ios-filled/16/1F6FEB/marker.png" alt="Location" /> 5900 BALCONES DRIVE AUSTIN,
+          TX 78731 USA
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Line -->
+    <div
+      style="border-top: 1px solid #21262d; padding-top: 20px; margin-top: 20px; text-align: center; color: #8b949e;">
+      <p>© 2025 CareerConnect. All rights reserved.</p>
+      <div style="margin-top: 10px;">
+        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none; ">Privacy Policy</a>
+        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none;">Terms of Service</a>
+        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none;">Cookie Policy</a>
+      </div>
+    </div>
+
+
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+      <!-- Chat Icon -->
+      <div id="chatToggle"
+        style="background-color: #25D366; padding: 14px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.2s;">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/chat.png" alt="Chat Icon" />
+      </div>
+
+      <!-- Chat Window -->
+      <!-- Chat Window -->
+      <div id="chatWindow" style="display: none; width: 320px; height: 460px; background-color: #fff; border-radius: 16px;
+     box-shadow: 0 6px 16px rgba(0,0,0,0.3); position: absolute; bottom: 70px; right: 0;
+     font-family: 'Segoe UI', sans-serif; overflow: hidden; display: none; flex-direction: column;">
+
+        <!-- Header -->
+        <div style="background-color: #0D1117; color: white; padding: 14px; font-weight: 600; font-size: 16px;">
+          PlaceXis Bot
+        </div>
+
+        <!-- Chat Body -->
+        <div id="chatBody"
+          style="padding: 12px; height: 340px; overflow-y: auto; background-color: #f4f4f4; display: flex; flex-direction: column; gap: 10px;">
+          <!-- Chat bubbles injected here -->
+        </div>
+
+        <!-- Input Area -->
+        <div style="display: flex; border-top: 1px solid #ddd; padding: 10px; background-color: #fff;">
+          <input id="userInput" type="text" placeholder="Ask about placement..."
+            style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 20px; outline: none; font-size: 14px;" />
+          <button onclick="sendMessage()"
+            style="background-color: #0D1117; color: white; border: none; padding: 10px 16px; margin-left: 8px; border-radius: 20px; cursor: pointer;">Send</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("reviewForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch("/api/submit-review", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+        document.getElementById("reviewResponse").textContent = result.message;
+        this.reset();
+      } catch (error) {
+        document.getElementById("reviewResponse").textContent = "❌ Failed to submit review.";
+      }
+    });
+  </script>
 
 </body>
+
 </html>

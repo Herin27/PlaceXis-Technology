@@ -109,6 +109,17 @@ body {
   background-color: #fff;
   color: #2475f7;
 }
+.get-started-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.service-card a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
 
 /* Hamburger Icon */
 .menu-icon {
