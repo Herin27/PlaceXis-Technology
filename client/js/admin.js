@@ -259,6 +259,13 @@ async function loadContacts() {
     console.error("Failed to load contacts:", err);
   }
 }
+
+  loadContacts();
+
+document.addEventListener("DOMContentLoaded", () => {
+  showSection("contacts"); // or trigger based on a button
+});
+
 function showSection(sectionId) {
   document.querySelectorAll(".content-section").forEach((section) => {
     section.style.display = "none";
@@ -274,9 +281,6 @@ function showSection(sectionId) {
   }
 }
 document.querySelector(".action-btn").addEventListener("click", () => {
-  window.location.href = "/api/export-contacts";
-});
-document.getElementById("exportContacts").addEventListener("click", () => {
   window.location.href = "/api/export-contacts";
 });
 
