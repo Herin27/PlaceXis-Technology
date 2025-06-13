@@ -263,7 +263,7 @@ async function loadContacts() {
   loadContacts();
 
 document.addEventListener("DOMContentLoaded", () => {
-  showSection("contacts"); // or trigger based on a button
+  showSection("dashboard"); // or trigger based on a button
 });
 
 function showSection(sectionId) {
