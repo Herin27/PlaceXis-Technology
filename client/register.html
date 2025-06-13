@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CareerConnect - Register</title>
+    <link rel="stylesheet" href="./css/register.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -19,35 +20,36 @@
     </style>
   </head>
   <body class="bg-gray-50">
-    <header class="bg-white shadow">
-      <div class="navbar-container max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-          <img src="./images/logo.jpg" alt="Logo" class="w-10 h-10 rounded-full" />
-          <span class="text-xl font-semibold">PlaceXis Technology</span>
-        </div>
-
-        <div class="md:hidden cursor-pointer" id="menu-icon">
-          <i class="fa fa-bars text-xl"></i>
-        </div>
-
-        <nav id="navbar-menu" class="hidden md:flex gap-6 items-center flex-col md:flex-row mt-4 md:mt-0">
-          <a href="./index.html" class="text-blue-700">Home</a>
-          <a href="./about.html">About</a>
-          <a href="./services.html">Services</a>
-          <a href="./contect.html">Contact</a>
-          <div class="md:flex items-center gap-4 hidden">
-            <span class="text-sm">
-              <i class="fa fa-phone"></i> +18389382173
-            </span>
-            <button class="bg-blue-800 text-white px-4 py-2 rounded">
-              <a href="./register.html">Get Started</a>
-            </button>
-          </div>
-        </nav>
+    <header class="navbar">
+    <div class="navbar-container">
+      <div class="navbar-left">
+        <img src="./images/logo.jpg" alt="Logo" class="logo" />
       </div>
-    </header>
 
-    <section class="bg-blue-800 text-white py-12 text-center">
+      <div class="menu-icon" id="menu-icon">
+        <i class="fa fa-bars"></i>
+      </div>
+
+      <nav class="navbar-menu" id="navbar-menu">
+        <a href="./index.html" >Home</a>
+        <a href="./about.html">About</a>
+        <a href="./services.html">Services</a>
+        <a href="./review_form.html">Review</a>
+        <a href="./contect.html">Contact</a>
+        <a href="./admin_login.html">Admin</a>
+        
+        <div class="mobile-contact">
+          <i class="fa fa-phone"></i>
+          <span class="phone"> +18389382173</span>
+          <button class="get-started-btn"><a href="./register.html">Get Started</a></button>
+        </div>
+      </nav>
+
+
+    </div>
+  </header>
+
+    <section class="bg-blue-800 text-white py-12 text-center" style="background-color: #1a72b2;">
       <div class="flex justify-center mb-4">
         <img src="./images/user.svg" alt="Logo" class="w-16 h-16 rounded-full" />
       </div>
@@ -105,7 +107,7 @@
           </label>
         </div>
 
-        <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900 transition">
+        <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900 transition" style="background-color: #1a72b2;">
           Create My Profile →
         </button>
 
@@ -192,9 +194,9 @@
       style="border-top: 1px solid #21262d; padding-top: 20px; margin-top: 20px; text-align: center; color: #8b949e;">
       <p>© 2025 CareerConnect. All rights reserved.</p>
       <div style="margin-top: 10px;">
-        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none; ">Privacy Policy</a>
-        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none;">Terms of Service</a>
-        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none;">Cookie Policy</a>
+        <a href="#" style="color: #1a72b2; margin: 0 10px; text-decoration: none; ">Privacy Policy</a>
+        <a href="#" style="color: #1a72b2; margin: 0 10px; text-decoration: none;">Terms of Service</a>
+        <a href="#" style="color: #1a72b2; margin: 0 10px; text-decoration: none;">Cookie Policy</a>
       </div>
     </div>
 

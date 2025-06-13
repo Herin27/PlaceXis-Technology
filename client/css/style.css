@@ -32,7 +32,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -44,20 +44,14 @@ body {
 }
 
 .navbar-left img {
-  width: auto;
-  height: 70px;
-  border-radius: 50%;
+  width: 35%;
+  height: 18%;
   display: flex;
   align-items: center;
   justify-content: center;
   object-fit: cover;
 }
 
-.brand-name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1e1e2f;
-}
 
 /* Nav Menu */
 .navbar-menu {
@@ -76,7 +70,7 @@ body {
 
 .navbar-menu a:hover,
 .navbar-menu a.active {
-  color: #08389C;
+  color: #1a72b2;
 }
 
 /* Right Section */
@@ -92,17 +86,25 @@ body {
   color: #444;
   font-size: 14px;
 }
+.mobile-contact
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 
+  gap: 0.5em;
+}
 .get-started-btn {
   padding: 0.5em 1em;
-  background-color: #08389C;
+  background-color: #1a72b2;
   color: #fff;
   border: none;
   border-radius: 6px;
   font-weight: 550;
   cursor: pointer;
   transition: 0.3s;
-  margin-left: 10px;
+  width: 120px;
 }
 .get-started-btn a {
   color: #fff;
@@ -184,7 +186,7 @@ body {
 .hero-header span {
   font-size: 4rem;
   font-weight: 800;
-  color: #08389C;
+  color: #1a72b2;
   margin-bottom: 20px;
 }
 
@@ -340,7 +342,7 @@ body {
 }
 
 .service-icon.blue {
-  background-color: #08389C;
+  background-color: #1a72b2;
 }
 
 .service-icon.green {
@@ -411,7 +413,7 @@ body {
 }
 
 .view-all-btn {
-  background-color: #08389C;
+  background-color: #1a72b2;
   color: white;
   border: none;
   border-radius: 8px;
@@ -422,12 +424,12 @@ body {
 }
 
 .view-all-btn:hover {
-  background-color: #1a5bbf;
+  background-color: #073278;
 }
 
 .view-all-wrapper :hover {
-  background-color: #fff;
-  color: #08389C;
+  background-color: #073278;
+  color: #FFF;
 }
 
 .view-all-btn span,
@@ -503,7 +505,7 @@ body {
 
 /* our track record */
 .track-record-section {
-  background-color: #08389C;
+  background-color: #1a72b2;
   color: white;
   text-align: center;
   padding: 80px 20px;

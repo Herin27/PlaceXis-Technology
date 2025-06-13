@@ -12,43 +12,47 @@ body {
   line-height: 1.5;
 }
 
-/* Navbar */
+/* Toggle Menu Icon */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #111;
+}
+
+/* Sticky Navbar */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  width: 100%;
 }
 
 .navbar-container {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8em 1em;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 /* Logo Section */
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
 }
 
 .navbar-left img {
-  height: 60px;
-  border-radius: 50%;
+  width: 35%;
+  height: 18%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   object-fit: cover;
 }
 
-.brand-name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1e1e2f;
-}
 
 /* Nav Menu */
 .navbar-menu {
@@ -67,14 +71,15 @@ body {
 
 .navbar-menu a:hover,
 .navbar-menu a.active {
-  color: #08389C;
+  color: #1a72b2;
 }
 
 /* Right Section */
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 1.2em;
+  font-size: 14px;
 }
 
 .phone {
@@ -82,41 +87,61 @@ body {
   color: #444;
   font-size: 14px;
 }
+.mobile-contact
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 
+  gap: 0.5em;
+}
 .get-started-btn {
   padding: 0.5em 1em;
-  background-color: #08389C;
+  background-color: #1a72b2;
   color: #fff;
   border: none;
   border-radius: 6px;
   font-weight: 550;
   cursor: pointer;
   transition: 0.3s;
+  width: 120px;
 }
+.get-started-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+.learn-more a{
+  color: #000000;
+  text-decoration: none;
+}
+.learn-more a:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
 
 .get-started-btn:hover {
-  background-color: #fff;
-  color: #08389C;
-  border: 1px solid #08389C;
+  background-color: #073278;
+  color: #fff;
 }
-
-.get-started-btn a {
-  color: inherit;
+.get-started-btn a:hover{
+  color: #fff;
   text-decoration: none;
 }
 
 /* Hamburger Icon */
 .menu-icon {
   display: none;
-  font-size: 24px;
+  font-size: 1.6rem;
   cursor: pointer;
-  color: #000;
 }
+
 
 
 /* Hero Section */
 .hero {
-  background-color: #0047ab;
+  background-color: #1a72b2;
   color: #fff;
   text-align: center;
   padding: 60px 20px;

@@ -32,7 +32,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -40,24 +40,18 @@ body {
 .navbar-left {
   display: flex;
   align-items: center;
-  gap:  0px;
+  gap: 0px;
 }
 
 .navbar-left img {
-  width: auto;
-  height: 70px;
-  border-radius: 50%;
+  width: 35%;
+  height: 18%;
   display: flex;
   align-items: center;
   justify-content: center;
   object-fit: cover;
 }
 
-.brand-name {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #1e1e2f;
-}
 
 /* Nav Menu */
 .navbar-menu {
@@ -76,7 +70,7 @@ body {
 
 .navbar-menu a:hover,
 .navbar-menu a.active {
-  color: #08389C;
+  color: #1a72b2;
 }
 
 /* Right Section */
@@ -92,25 +86,45 @@ body {
   color: #444;
   font-size: 14px;
 }
+.mobile-contact
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 
+  gap: 0.5em;
+}
 .get-started-btn {
   padding: 0.5em 1em;
-  background-color: #08389C;
+  background-color: #1a72b2;
   color: #fff;
   border: none;
   border-radius: 6px;
   font-weight: 550;
   cursor: pointer;
   transition: 0.3s;
-  margin-left: 10px;
+  width: 120px;
 }
+.get-started-btn a {
+  color: #fff;
+  text-decoration: none;
+}
+.learn-more a{
+  color: #000000;
+  text-decoration: none;
+}
+.learn-more a:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
 
 .get-started-btn:hover {
-  background-color: #fff;
-  color: #2475f7;
+  background-color: #073278;
+  color: #fff;
 }
-
-.get-started-btn a {
+.get-started-btn a:hover{
   color: #fff;
   text-decoration: none;
 }
@@ -122,8 +136,9 @@ body {
   cursor: pointer;
 }
 
+
 .hero {
-  background-color: #0047ab;
+  background-color: #1a72b2;
   color: #fff;
   text-align: center;
   padding: 60px 20px 40px;
@@ -200,7 +215,7 @@ body {
 
 .contact-form button {
   width: 100%;
-  background: #002d87;
+  background: #1a72b2;
   color: white;
   padding: 12px;
   border: none;
@@ -261,7 +276,7 @@ body {
 .map-section h2 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #002d87;
+  color: #1a72b2;
 }
 .map-section p {
   font-size: 16px;
