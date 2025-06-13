@@ -3,612 +3,342 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Join CareerConnect</title>
+    <title>CareerConnect - Register</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="./css/register.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @media screen and (max-width: 400px) {
+        #chatWindow {
+          width: 90vw !important;
+          height: 70vh !important;
+        }
+      }
+    </style>
   </head>
-
   <body class="bg-gray-50">
-    <header class="navbar">
-      <div class="navbar-container">
-        <div class="navbar-left">
-          <img src="./images/logo.jpg" alt="Logo" class="logo" />
-          <span class="brand-name">PlaceXis Technology</span>
+    <header class="bg-white shadow">
+      <div class="navbar-container max-w-screen-xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+          <img src="./images/logo.jpg" alt="Logo" class="w-10 h-10 rounded-full" />
+          <span class="text-xl font-semibold">PlaceXis Technology</span>
         </div>
 
-        <div class="menu-icon" id="menu-icon">
-          <i class="fa fa-bars"></i>
+        <div class="md:hidden cursor-pointer" id="menu-icon">
+          <i class="fa fa-bars text-xl"></i>
         </div>
 
-        <nav class="navbar-menu" id="navbar-menu">
-          <a href="./index.html" class="active">Home</a>
+        <nav id="navbar-menu" class="hidden md:flex gap-6 items-center flex-col md:flex-row mt-4 md:mt-0">
+          <a href="./index.html" class="text-blue-700">Home</a>
           <a href="./about.html">About</a>
           <a href="./services.html">Services</a>
           <a href="./contect.html">Contact</a>
-          <div class="mobile-contact">
-            <span class="phone"
-              ><i class="fa fa-phone"></i> +18389382173</span
-            >
-            <button class="get-started-btn">
-              <a href="./register.html" style="color: #fff">Get Started</a>
+          <div class="md:flex items-center gap-4 hidden">
+            <span class="text-sm">
+              <i class="fa fa-phone"></i> +18389382173
+            </span>
+            <button class="bg-blue-800 text-white px-4 py-2 rounded">
+              <a href="./register.html">Get Started</a>
             </button>
           </div>
         </nav>
       </div>
     </header>
-    <section
-      class="bg-blue-800 text-white py-12 text-center"
-      style="height: 380px; text-align: center; justify-content: center"
-    >
-      <div class="flex justify-center mb-4" style="margin-top: 40px">
-        <img
-          src="./images/user.svg"
-          alt="Logo"
-          class="w-16 h-16 rounded-full"
-        />
+
+    <section class="bg-blue-800 text-white py-12 text-center">
+      <div class="flex justify-center mb-4">
+        <img src="./images/user.svg" alt="Logo" class="w-16 h-16 rounded-full" />
       </div>
-      <h1 class="text-3xl font-bold" style="font-size: 40px">
-        Join CareerConnect
-      </h1>
-      <p class="mt-2" style="font-size: 23px">
-        Start your journey to career success. Create your profile and get
-        matched with your dream job.
+      <h1 class="text-4xl font-bold">Join CareerConnect</h1>
+      <p class="mt-2 text-lg">
+        Start your journey to career success. Create your profile and get matched with your dream job.
       </p>
     </section>
 
-    <main
-      class="max-w-xxl mx-auto bg-white shadow-lg rounded-xl p-8 -mt-16"
-      style="margin-top: 50px; margin-bottom: 50px; width: 800px"
-    >
-      <h2 class="text-3xl font-semibold mb-4" style="text-align: center">
-        Create Your Profile
-      </h2>
-      <p style="text-align: center; margin-bottom: 20px">
+    <main class="w-full max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-6 sm:p-8 mt-12 mb-12">
+      <h2 class="text-3xl font-semibold mb-4 text-center">Create Your Profile</h2>
+      <p class="text-center mb-6">
         Tell us about yourself so we can find the perfect opportunities for you.
       </p>
-      <form
-        id="registerForm"
-        action="/api/register"
-        method="POST"
-        enctype="multipart/form-data"
-        class="space-y-4"
-      >
-        <!-- Personal Information -->
-        <h2 class="text-2xl font-semibold mb-4">Personal Information</h2>
-        <div class="grid grid-cols-2 gap-4">
-          <input
-            name="firstName"
-            type="text"
-            placeholder="First Name"
-            required
-            class="border px-3 py-2 rounded"
-          />
-          <input
-            name="lastName"
-            type="text"
-            placeholder="Last Name"
-            required
-            class="border px-3 py-2 rounded"
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email Address"
-            required
-            class="border px-3 py-2 rounded"
-          />
-          <input
-            name="phone"
-            type="tel"
-            placeholder="Phone Number"
-            required
-            class="border px-3 py-2 rounded"
-          />
+      <form id="registerForm" action="/api/register" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">Personal Information</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input name="firstName" type="text" placeholder="First Name" required class="border px-3 py-2 rounded" />
+            <input name="lastName" type="text" placeholder="Last Name" required class="border px-3 py-2 rounded" />
+            <input name="email" type="email" placeholder="Email Address" required class="border px-3 py-2 rounded" />
+            <input name="phone" type="tel" placeholder="Phone Number" required class="border px-3 py-2 rounded" />
+          </div>
         </div>
 
-        <!-- Professional Details -->
-        <h2 class="text-2xl font-semibold mb-4">Professional Details</h2>
-        <div class="grid grid-cols-2 gap-4">
-          <input
-            name="yearsExp"
-            type="number"
-            placeholder="Years of Experience"
-            required
-            class="border px-3 py-2 rounded"
-          />
-          <input
-            name="currentRole"
-            type="text"
-            placeholder="Current Role/Title"
-            required
-            class="border px-3 py-2 rounded"
-          />
-          <input
-            name="salaryRange"
-            type="text"
-            placeholder="Expected Salary Range"
-            required
-            class="border px-3 py-2 rounded"
-          />
-          <input
-            name="location"
-            type="text"
-            placeholder="Preferred Location"
-            required
-            class="border px-3 py-2 rounded"
-          />
-        </div>
-        <textarea
-          name="careerGoals"
-          rows="4"
-          placeholder="Tell us about your career goals…"
-          required
-          class="w-full border px-3 py-2 rounded"
-        ></textarea>
-
-        <!-- Resume Upload -->
-        <h2 class="text-2xl font-semibold mb-4">Resume Upload</h2>
-        <div
-          class="border-dashed border-2 border-gray-300 rounded p-4 text-center"
-        >
-          <label class="block cursor-pointer">
-            <span class="text-gray-600"
-              >Upload Your Resume (PDF, DOC, DOCX up to 5MB)</span
-            >
-            <input
-              name="resume"
-              type="file"
-              accept=".pdf,.doc,.docx"
-              required
-              class="hidden"
-            />
-          </label>
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">Professional Details</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <input name="yearsExp" type="number" placeholder="Years of Experience" required class="border px-3 py-2 rounded" />
+            <input name="currentRole" type="text" placeholder="Current Role/Title" required class="border px-3 py-2 rounded" />
+            <input name="salaryRange" type="text" placeholder="Expected Salary Range" required class="border px-3 py-2 rounded" />
+            <input name="location" type="text" placeholder="Preferred Location" required class="border px-3 py-2 rounded" />
+          </div>
+          <textarea name="careerGoals" rows="4" placeholder="Tell us about your career goals…" required class="w-full border px-3 py-2 rounded mt-4"></textarea>
         </div>
 
-        <!-- Agreements -->
-        <div class="space-y-1 text-sm">
+        <div>
+          <h2 class="text-2xl font-semibold mb-2">Resume Upload</h2>
+          <div class="border-dashed border-2 border-gray-300 rounded p-4 text-center">
+            <label class="block cursor-pointer">
+              <span class="text-gray-600">Upload Your Resume (PDF, DOC, DOCX up to 5MB)</span>
+              <input name="resume" type="file" accept=".pdf,.doc,.docx" required class="hidden" />
+            </label>
+          </div>
+        </div>
+
+        <div class="space-y-2 text-sm">
           <label class="flex items-center">
             <input type="checkbox" name="agreeTOS" required class="mr-2" />
-            I agree to the
-            <a href="#" class="text-blue-600 underline">Terms of Service</a>.
+            I agree to the <a href="#" class="text-blue-600 underline">Terms of Service</a>.
           </label>
           <label class="flex items-center">
             <input type="checkbox" name="agreePrivacy" required class="mr-2" />
-            I’ve read and agree to the
-            <a href="#" class="text-blue-600 underline">Privacy Policy</a>.
+            I’ve read and agree to the <a href="#" class="text-blue-600 underline">Privacy Policy</a>.
           </label>
         </div>
 
-        <button
-          type="submit"
-          class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900 transition"
-        >
+        <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900 transition">
           Create My Profile →
         </button>
 
-        <div
-          class="mt-8 text-gray-600"
-          style="
-            background-color: #eff6ff;
-            padding: 25px;
-            border-radius: 8px;
-            color: #000;
-          "
-        >
-          <h2 class="text-16px font-semibold mb-4">What happens next?</h2>
-          <p style="font-size: 14px; line-height: 1.6">
-            . Our team will review your profile within 24 hours
-          </p>
-          <p style="font-size: 14px; line-height: 1.6">
-            . We'll contact you to discuss your career goals
-          </p>
-          <p style="font-size: 14px; line-height: 1.6">
-            . Start receiving matched job opportunities
-          </p>
-          <p style="font-size: 14px; line-height: 1.6">
-            . Get personalized career coaching and support
-          </p>
+        <div class="mt-8 bg-blue-50 text-black p-6 rounded">
+          <h2 class="text-lg font-semibold mb-2">What happens next?</h2>
+          <ul class="list-disc pl-5 space-y-1 text-sm">
+            <li>Our team will review your profile within 24 hours</li>
+            <li>We'll contact you to discuss your career goals</li>
+            <li>Start receiving matched job opportunities</li>
+            <li>Get personalized career coaching and support</li>
+          </ul>
         </div>
       </form>
     </main>
 
     <!-- footer -->
 
-    <footer
-      style="
-        background-color: #0d1117;
-        color: white;
-        padding: 60px 20px;
-        font-family: Arial, sans-serif;
-      "
-    >
-      <div
-        style="
-          display: flex;
-          flex-wrap: wrap;
-          max-width: 1200px;
-          margin: auto;
-          justify-content: space-between;
-        "
-      >
-        <!-- Logo and Description -->
-        <div style="flex: 1; min-width: 220px; margin-bottom: 30px">
-          <div style="display: flex; align-items: center; gap: 10px">
-            <div
-              style="
-                background-color: #1f6feb;
-                padding: 10px;
-                border-radius: 8px;
-              "
-            >
-              <img
-                src="https://img.icons8.com/ios-filled/30/ffffff/conference-call.png"
-                alt="icon"
-              />
-            </div>
-            <h3 style="margin: 0">CareerConnect</h3>
+  <footer style="background-color: #0D1117; color: white; padding: 60px 20px; font-family: Arial, sans-serif;">
+    <div style="display: flex; flex-wrap: wrap; max-width: 1200px; margin: auto; justify-content: space-between;">
+
+      <!-- Logo and Description -->
+      <div style="flex: 1; min-width: 220px; margin-bottom: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="background-color: #1F6FEB; padding: 10px; border-radius: 8px;">
+            <img src="https://img.icons8.com/ios-filled/30/ffffff/conference-call.png" alt="icon" />
           </div>
-          <p
-            style="
-              margin-top: 15px;
-              line-height: 1.6;
-              color: #c9d1d9;
-              font-weight: 200;
-              font-size: 16px;
-            "
-          >
-            Connecting talented professionals with their dream careers. We help
-            you get hired faster with our comprehensive placement services.
-          </p>
-          <div style="margin-top: 15px; display: flex; gap: 10px">
-            <img
-              src="https://img.icons8.com/ios-filled/20/ffffff/linkedin.png"
-            />
-            <img
-              src="https://img.icons8.com/ios-filled/20/ffffff/twitter.png"
-            />
-            <img
-              src="https://img.icons8.com/ios-filled/20/ffffff/facebook.png"
-            />
-          </div>
+          <h3 style="margin: 0;">PlaceXis Technology</h3>
         </div>
-
-        <!-- Quick Links -->
-        <div style="flex: 1; min-width: 150px; margin-bottom: 30px">
-          <h4>Quick Links</h4>
-          <ul
-            style="
-              list-style: none;
-              padding: 0;
-              line-height: 1.8;
-              font-weight: 200;
-              font-size: 16px;
-              margin-top: 45px;
-            "
-          >
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Services</li>
-            <li>Contact</li>
-            <li>Register</li>
-          </ul>
-        </div>
-
-        <!-- Our Services -->
-        <div style="flex: 1; min-width: 180px; margin-bottom: 30px">
-          <h4>Our Services</h4>
-          <ul
-            style="
-              list-style: none;
-              padding: 0;
-              line-height: 1.8;
-              font-weight: 200;
-              font-size: 16px;
-              margin-top: 45px;
-            "
-          >
-            <li>Resume Optimization</li>
-            <li>Interview Coaching</li>
-            <li>Job Matching</li>
-            <li>Career Guidance</li>
-            <li>Skill Assessment</li>
-          </ul>
-        </div>
-
-        <!-- Contact Info -->
-        <div style="flex: 1; min-width: 220px; margin-bottom: 30px">
-          <h4>Contact Info</h4>
-          <p
-            style="
-              line-height: 2;
-              font-weight: 200;
-              font-size: 16px;
-              margin-top: 45px;
-            "
-          >
-            <img src="https://img.icons8.com/ios-filled/16/1F6FEB/phone.png" />
-            +18389382173
-          </p>
-          <p style="line-height: 2; font-weight: 200; font-size: 16px">
-            <img
-              src="https://img.icons8.com/ios-filled/16/1F6FEB/new-post.png"
-            />
-            info@careerconnect.com
-          </p>
-          <p style="line-height: 2; font-weight: 200; font-size: 16px">
-            <img src="https://img.icons8.com/ios-filled/16/1F6FEB/marker.png" />
-            5900 BALCONES DRIVE AUSTIN, TX 78731 USA
-          </p>
+        <p style="margin-top: 15px; line-height: 1.6; color: #c9d1d9; font-weight: 200; font-size: 16px;">
+          Connecting talented professionals with their dream careers. We help you get hired faster with our
+          comprehensive placement services.
+        </p>
+        <div style="margin-top: 15px; display: flex; gap: 10px;">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/linkedin.png" alt="LinkedIn" />
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/twitter.png" alt="Twitter" />
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/facebook.png" alt="Facebook" />
         </div>
       </div>
 
-      <!-- Bottom Line -->
-      <div
-        style="
-          border-top: 1px solid #21262d;
-          padding-top: 20px;
-          margin-top: 20px;
-          text-align: center;
-          color: #8b949e;
-        "
-      >
-        <p>© 2025 CareerConnect. All rights reserved.</p>
-        <div style="margin-top: 10px">
-          <a
-            href="#"
-            style="color: #58a6ff; margin: 0 10px; text-decoration: none"
-            >Privacy Policy</a
-          >
-          <a
-            href="#"
-            style="color: #58a6ff; margin: 0 10px; text-decoration: none"
-            >Terms of Service</a
-          >
-          <a
-            href="#"
-            style="color: #58a6ff; margin: 0 10px; text-decoration: none"
-            >Cookie Policy</a
-          >
-        </div>
+      <!-- Quick Links -->
+      <div style="flex: 1; min-width: 150px; margin-bottom: 30px;">
+        <h4>Quick Links</h4>
+        <ul
+          style="list-style: none; padding: 0; line-height: 1.8; font-weight: 200; font-size: 16px; margin-top: 45px;">
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Services</li>
+          <li>Contact</li>
+          <li>Register</li>
+        </ul>
       </div>
 
-      <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999">
-        <!-- Chat Icon -->
-        <div
-          id="chatToggle"
-          style="
-            background-color: #25d366;
-            padding: 14px;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s;
-          "
-        >
-          <img src="https://img.icons8.com/ios-filled/24/ffffff/chat.png" />
+      <!-- Our Services -->
+      <div style="flex: 1; min-width: 180px; margin-bottom: 30px;">
+        <h4>Our Services</h4>
+        <ul
+          style="list-style: none; padding: 0; line-height: 1.8; font-weight: 200; font-size: 16px; margin-top: 45px;">
+          <li>Resume Optimization</li>
+          <li>Interview Coaching</li>
+          <li>Job Matching</li>
+          <li>Career Guidance</li>
+          <li>Skill Assessment</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div style="flex: 1; min-width: 220px; margin-bottom: 30px;">
+        <h4>Contact Info</h4>
+        <p style="line-height: 2; font-weight: 200; font-size: 16px; margin-top: 45px;"><img
+            src="https://img.icons8.com/ios-filled/16/1F6FEB/phone.png" alt="Phone" /> +18389382173</p>
+        <p style="line-height: 2; font-weight: 200; font-size: 16px; ">
+          <img src="https://img.icons8.com/ios-filled/16/1F6FEB/new-post.png" alt="Email" /> info@careerconnect.com
+        </p>
+        <p style="line-height: 2; font-weight: 200; font-size: 16px; "><img
+            src="https://img.icons8.com/ios-filled/16/1F6FEB/marker.png" alt="Location" /> 5900 BALCONES DRIVE AUSTIN,
+          TX 78731 USA
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom Line -->
+    <div
+      style="border-top: 1px solid #21262d; padding-top: 20px; margin-top: 20px; text-align: center; color: #8b949e;">
+      <p>© 2025 CareerConnect. All rights reserved.</p>
+      <div style="margin-top: 10px;">
+        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none; ">Privacy Policy</a>
+        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none;">Terms of Service</a>
+        <a href="#" style="color: #58a6ff; margin: 0 10px; text-decoration: none;">Cookie Policy</a>
+      </div>
+    </div>
+
+
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+      <!-- Chat Icon -->
+      <div id="chatToggle"
+        style="background-color: #25D366; padding: 14px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); transition: transform 0.2s;">
+        <img src="https://img.icons8.com/ios-filled/24/ffffff/chat.png" alt="Chat Icon" />
+      </div>
+
+      <!-- Chat Window -->
+      <!-- Chat Window -->
+      <div id="chatWindow" style="display: none; width: 320px; height: 460px; background-color: #fff; border-radius: 16px;
+     box-shadow: 0 6px 16px rgba(0,0,0,0.3); position: absolute; bottom: 70px; right: 0;
+     font-family: 'Segoe UI', sans-serif; overflow: hidden; display: none; flex-direction: column;">
+
+        <!-- Header -->
+        <div style="background-color: #0D1117; color: white; padding: 14px; font-weight: 600; font-size: 16px;">
+          PlaceXis Bot
         </div>
 
-        <!-- Chat Window -->
-        <div
-          id="chatWindow"
-          style="
-            display: none;
-            width: 320px;
-            height: 460px;
-            background-color: #fff;
-            border-radius: 16px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-            position: absolute;
-            bottom: 70px;
-            right: 0;
-            font-family: 'Segoe UI', sans-serif;
-            overflow: hidden;
-            display: none;
-            flex-direction: column;
-          "
-        >
-          <!-- Header -->
-          <div
-            style="
-              background-color: #0d1117;
-              color: white;
-              padding: 14px;
-              font-weight: 600;
-              font-size: 16px;
-            "
-          >
-            CareerConnect Bot
-          </div>
+        <!-- Chat Body -->
+        <div id="chatBody"
+          style="padding: 12px; height: 340px; overflow-y: auto; background-color: #f4f4f4; display: flex; flex-direction: column; gap: 10px;">
+          <!-- Chat bubbles injected here -->
+        </div>
 
-          <!-- Chat Body -->
-          <div
-            id="chatBody"
-            style="
-              padding: 12px;
-              height: 340px;
-              overflow-y: auto;
-              background-color: #f4f4f4;
-              display: flex;
-              flex-direction: column;
-              gap: 10px;
-            "
-          >
-            <!-- Chat bubbles injected here -->
-          </div>
-
-          <!-- Input Area -->
-          <div
-            style="
-              display: flex;
-              border-top: 1px solid #ddd;
-              padding: 10px;
-              background-color: #fff;
-            "
-          >
-            <input
-              id="userInput"
-              type="text"
-              placeholder="Ask about placement..."
-              style="
-                flex: 1;
-                padding: 10px;
-                border: 1px solid #ccc;
-                border-radius: 20px;
-                outline: none;
-                font-size: 14px;
-              "
-            />
-            <button
-              onclick="sendMessage()"
-              style="
-                background-color: #0d1117;
-                color: white;
-                border: none;
-                padding: 10px 16px;
-                margin-left: 8px;
-                border-radius: 20px;
-                cursor: pointer;
-              "
-            >
-              Send
-            </button>
-          </div>
+        <!-- Input Area -->
+        <div style="display: flex; border-top: 1px solid #ddd; padding: 10px; background-color: #fff;">
+          <input id="userInput" type="text" placeholder="Ask about placement..."
+            style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 20px; outline: none; font-size: 14px;" />
+          <button onclick="sendMessage()"
+            style="background-color: #0D1117; color: white; border: none; padding: 10px 16px; margin-left: 8px; border-radius: 20px; cursor: pointer;">Send</button>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
+    <!-- Toggle Navbar JS -->
     <script>
-      // Optional: you can hook into submit to show a spinner, etc.
-      document.getElementById("registerForm").addEventListener("submit", () => {
-        // e.g. disable button, show loader…
-      });
-      const chatToggle = document.getElementById("chatToggle");
-      const chatWindow = document.getElementById("chatWindow");
-      let isChatOpen = false;
-
-      window.addEventListener("load", () => {
-        chatWindow.style.display = "none";
-        isChatOpen = false;
+      document.getElementById("menu-icon").addEventListener("click", () => {
+        document.getElementById("navbar-menu").classList.toggle("hidden");
       });
 
-      chatToggle.addEventListener("click", () => {
-        isChatOpen = !isChatOpen;
-        chatWindow.style.display = isChatOpen ? "flex" : "none";
+
+      const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    let isChatOpen = false;
+
+    window.addEventListener("load", () => {
+      chatWindow.style.display = 'none';
+      isChatOpen = false;
+    });
+
+    chatToggle.addEventListener('click', () => {
+      isChatOpen = !isChatOpen;
+      chatWindow.style.display = isChatOpen ? 'flex' : 'none';
+    });
+    const API_KEY = "AIzaSyAKWyFcFlT94XUhnNJDYC42x7TyvWnPk4U"; // 🔒 Replace with your actual Gemini API key
+
+    const placementKeywords = [
+      "resume", "interview", "placement", "job", "career", "cv",
+      "guidance", "hired", "skills", "assessment", "match", "recruitment"
+    ];
+
+    function isPlacementRelated(input) {
+      const lower = input.toLowerCase();
+      return placementKeywords.some(k => lower.includes(k));
+    }
+
+    async function getGeminiResponse(inputText) {
+      const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY;
+
+      const payload = {
+        contents: [
+          {
+            parts: [{ text: inputText }]
+          }
+        ]
+      };
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
       });
-      const API_KEY = "AIzaSyAKWyFcFlT94XUhnNJDYC42x7TyvWnPk4U"; // 🔒 Replace with your actual Gemini API key
 
-      const placementKeywords = [
-        "resume",
-        "interview",
-        "placement",
-        "job",
-        "career",
-        "cv",
-        "guidance",
-        "hired",
-        "skills",
-        "assessment",
-        "match",
-        "recruitment",
-      ];
+      const data = await response.json();
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.";
+      return text;
+    }
 
-      function isPlacementRelated(input) {
-        const lower = input.toLowerCase();
-        return placementKeywords.some((k) => lower.includes(k));
+    // Called when user sends a message
+    async function sendMessage() {
+      const input = userInput.value.trim();
+      if (!input) return;
+
+      appendMessage("You", input, "user");
+      userInput.value = "";
+
+      if (!isPlacementRelated(input)) {
+        appendMessage("Bot", "I'm trained to answer only placement-related questions. Please ask about jobs, resumes, or interviews.", "bot");
+        return;
       }
 
-      async function getGeminiResponse(inputText) {
-        const url =
-          "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" +
-          API_KEY;
+      appendMessage("Bot", "Typing...", "bot");
 
-        const payload = {
-          contents: [
-            {
-              parts: [{ text: inputText }],
-            },
-          ],
-        };
+      try {
+        const reply = await getGeminiResponse(input);
 
-        const response = await fetch(url, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        });
-
-        const data = await response.json();
-        const text =
-          data?.candidates?.[0]?.content?.parts?.[0]?.text ||
-          "Sorry, I couldn't understand that.";
-        return text;
+        // Replace 'Typing...' with real response
+        const lastMsg = chatBody.querySelectorAll("div")[chatBody.querySelectorAll("div").length - 1];
+        lastMsg.innerHTML = `<div style="background-color: #E6E6E6; padding: 10px 14px; border-radius: 20px; max-width: 75%; font-size: 14px;">${reply}</div>`;
+      } catch (err) {
+        appendMessage("Bot", "Oops! Couldn't connect to Gemini. Try again later.", "bot");
+        console.error(err);
       }
+    }
 
-      // Called when user sends a message
-      async function sendMessage() {
-        const input = userInput.value.trim();
-        if (!input) return;
+    function appendMessage(sender, message, type) {
+      const msgWrapper = document.createElement("div");
+      msgWrapper.style.display = "flex";
+      msgWrapper.style.justifyContent = type === "user" ? "flex-end" : "flex-start";
 
-        appendMessage("You", input, "user");
-        userInput.value = "";
+      const bubble = document.createElement("div");
+      bubble.style.maxWidth = "75%";
+      bubble.style.padding = "10px 14px";
+      bubble.style.borderRadius = "20px";
+      bubble.style.marginBottom = "4px";
+      bubble.style.whiteSpace = "pre-wrap";
+      bubble.style.lineHeight = "1.5";
+      bubble.style.fontSize = "14px";
+      bubble.style.boxShadow = "0 1px 4px rgba(0,0,0,0.1)";
+      bubble.style.backgroundColor = type === "user" ? "#DCF8C6" : "#E6E6E6";
+      bubble.style.color = "#111";
 
-        if (!isPlacementRelated(input)) {
-          appendMessage(
-            "Bot",
-            "I'm trained to answer only placement-related questions. Please ask about jobs, resumes, or interviews.",
-            "bot"
-          );
-          return;
-        }
-
-        appendMessage("Bot", "Typing...", "bot");
-
-        try {
-          const reply = await getGeminiResponse(input);
-
-          // Replace 'Typing...' with real response
-          const lastMsg =
-            chatBody.querySelectorAll("div")[
-              chatBody.querySelectorAll("div").length - 1
-            ];
-          lastMsg.innerHTML = `<div style="background-color: #E6E6E6; padding: 10px 14px; border-radius: 20px; max-width: 75%; font-size: 14px;">${reply}</div>`;
-        } catch (err) {
-          appendMessage(
-            "Bot",
-            "Oops! Couldn't connect to Gemini. Try again later.",
-            "bot"
-          );
-          console.error(err);
-        }
-      }
-
-      function appendMessage(sender, message, type) {
-        const msgWrapper = document.createElement("div");
-        msgWrapper.style.display = "flex";
-        msgWrapper.style.justifyContent =
-          type === "user" ? "flex-end" : "flex-start";
-
-        const bubble = document.createElement("div");
-        bubble.style.maxWidth = "75%";
-        bubble.style.padding = "10px 14px";
-        bubble.style.borderRadius = "20px";
-        bubble.style.marginBottom = "4px";
-        bubble.style.whiteSpace = "pre-wrap";
-        bubble.style.lineHeight = "1.5";
-        bubble.style.fontSize = "14px";
-        bubble.style.boxShadow = "0 1px 4px rgba(0,0,0,0.1)";
-        bubble.style.backgroundColor = type === "user" ? "#DCF8C6" : "#E6E6E6";
-        bubble.style.color = "#111";
-
-        bubble.innerText = message;
-        msgWrapper.appendChild(bubble);
-        chatBody.appendChild(msgWrapper);
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }
+      bubble.innerText = message;
+      msgWrapper.appendChild(bubble);
+      chatBody.appendChild(msgWrapper);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
     </script>
   </body>
 </html>

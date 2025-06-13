@@ -217,3 +217,113 @@ body {
   font-size: 1rem;
   color: #2e7d32;
 }
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navbar-menu {
+    gap: 1em;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  #reviewForm {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle,
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    padding: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-container {
+    flex-wrap: wrap;
+    padding: 0 16px;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .hero {
+    padding: 40px 20px;
+    height: auto;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  #reviewForm {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .navbar-left img {
+    height: 50px;
+  }
+
+  .get-started-btn {
+    font-size: 13px;
+    padding: 0.4em 0.8em;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  #reviewForm {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  #reviewForm input,
+  #reviewForm select,
+  #reviewForm textarea {
+    font-size: 0.95rem;
+  }
+
+  #reviewForm button {
+    font-size: 0.95rem;
+  }
+}

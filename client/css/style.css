@@ -108,6 +108,15 @@ body {
   color: #fff;
   text-decoration: none;
 }
+.learn-more a{
+  color: #000000;
+  text-decoration: none;
+}
+.learn-more a:hover{
+  color: #ffffff;
+  text-decoration: none;
+}
+
 
 .get-started-btn:hover {
   background-color: #073278;
@@ -797,7 +806,7 @@ body {
 
 
 /* Mobile Styles */
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
   .navbar-menu {
     position: fixed;
     top: 0;

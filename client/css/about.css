@@ -1,55 +1,46 @@
-/* Global font and reset */
+/* Global Reset */
 * {
-  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
   background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.5;
 }
 
-/* Toggle Menu Icon */
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #111;
-}
-
-/* Sticky Navbar */
+/* Navbar */
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0.8em 1em;
 }
 
 /* Logo Section */
 .navbar-left {
   display: flex;
   align-items: center;
-  gap:  0px;
+  gap: 10px;
 }
 
 .navbar-left img {
-  width: auto;
-  height: 70px;
+  height: 60px;
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   object-fit: cover;
 }
 
@@ -83,8 +74,7 @@ body {
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 1.2em;
-  font-size: 14px;
+  gap: 1em;
 }
 
 .phone {
@@ -102,83 +92,77 @@ body {
   font-weight: 550;
   cursor: pointer;
   transition: 0.3s;
-  margin-left: 10px;
 }
 
 .get-started-btn:hover {
   background-color: #fff;
-  color: #2475f7;
+  color: #08389C;
+  border: 1px solid #08389C;
 }
 
 .get-started-btn a {
-  color: #fff;
+  color: inherit;
   text-decoration: none;
 }
 
 /* Hamburger Icon */
 .menu-icon {
   display: none;
-  font-size: 1.6rem;
+  font-size: 24px;
   cursor: pointer;
+  color: #000;
 }
 
 
+/* Hero Section */
 .hero {
   background-color: #0047ab;
   color: #fff;
   text-align: center;
-  padding: 60px 20px 40px;
-  height: 250px;
-  text-align: center;
-  justify-content: center;
+  padding: 60px 20px;
 }
 
 .hero h1 {
+  font-size: 40px;
   margin-bottom: 10px;
-  font-size: 52px;
-  text-align: center;
-  justify-content: center;
-  margin-top: 20px;
 }
 
 .hero p {
-  font-size: 22px;
+  font-size: 18px;
   max-width: 800px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
+/* Mission Section */
 .mission-section {
   padding: 60px 20px;
   display: flex;
-  gap: 50px;
-  background: #ffffff;
-  max-width: 1400px;
-  margin: auto;
-  height: 300px;
-  margin-top: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  background: #fff;
 }
 
 .mission {
-  max-width: 700px;
-  gap: 20px;
-}
-.mission h2 {
-  color: #111827;
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-.mission p {
-  color: #000;
-  font-size: 18px;
-  line-height: 1.6;
+  max-width: 600px;
 }
 
+.mission h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.mission p {
+  font-size: 16px;
+  color: #000;
+}
+
+/* Stats Section */
 .stats {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  align-items: center;
   justify-content: center;
 }
 
@@ -187,16 +171,17 @@ body {
   border-radius: 8px;
   padding: 20px;
   text-align: center;
-  width: 200px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  width: 180px;
   font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .stat-box strong {
-  font-size: 28px;
+  font-size: 24px;
   color: #0047ab;
 }
 
+/* Core Values */
 .core-values {
   background: #f9fafc;
   padding: 60px 20px;
@@ -204,15 +189,15 @@ body {
 }
 
 .core-values h2 {
+  font-size: 36px;
   margin-bottom: 10px;
-  font-size: 42px;
   color: #111827;
 }
 
 .core-values p {
-  margin-bottom: 40px;
+  font-size: 16px;
+  margin-bottom: 30px;
   color: #555;
-  font-size: 18px;
 }
 
 .value-boxes {
@@ -226,8 +211,7 @@ body {
   background: #fff;
   border-radius: 10px;
   padding: 20px;
-  max-width: 280px;
-  text-align: center;
+  width: 260px;
   box-shadow: 0 0 12px rgba(0,0,0,0.05);
 }
 
@@ -237,27 +221,27 @@ body {
 }
 
 .value-box h3 {
-  margin-bottom: 10px;
   font-size: 20px;
   color: #0047ab;
+  margin-bottom: 10px;
 }
 
 .value-box p {
   color: #555;
 }
 
+/* Experience Section */
 .experience-section {
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
   padding: 60px 20px;
   background: #fff;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
 }
 
 .experience-image img {
-  max-width: 500px;
+  max-width: 100%;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
@@ -267,36 +251,29 @@ body {
 }
 
 .experience-text h2 {
-  margin-bottom: 20px;
   font-size: 26px;
-}
-
-.experience-text ul {
-  padding-left: 20px;
+  margin-bottom: 20px;
 }
 
 .experience-text li {
   margin-bottom: 15px;
   color: #444;
-  line-height: 1.6;
 }
 
-
-
-@media (max-width: 768px) {
+/* Responsive - Mobile & Tablet */
+@media (max-width: 992px) {
   .navbar-menu {
     position: fixed;
     top: 0;
     left: -100%;
     height: 100vh;
     width: 250px;
-    background: #fff;
     flex-direction: column;
+    background: #fff;
     padding: 2em 1.5em;
     gap: 1.5em;
     transition: 0.3s ease;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1001;
   }
 
   .navbar-menu.show {
@@ -311,10 +288,85 @@ body {
     display: block;
   }
 
-  .mobile-contact {
-    margin-top: 2em;
-    display: flex;
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .mission h2 {
+    font-size: 30px;
+  }
+
+  .core-values h2 {
+    font-size: 30px;
+  }
+
+  .experience-text h2 {
+    font-size: 22px;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .navbar-menu {
+    display: none;
     flex-direction: column;
-    gap: 0.5em;
+  }
+  .navbar-menu.show {
+    display: flex;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+  }
+  .navbar-menu.show {
+    display: flex;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .mission-section {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .mission h2 {
+    font-size: 26px;
+  }
+
+  .value-box {
+    width: 100%;
+  }
+
+  .experience-text h2 {
+    font-size: 20px;
+  }
+
+  .stat-box {
+    width: 100%;
   }
 }

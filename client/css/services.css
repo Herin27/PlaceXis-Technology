@@ -339,3 +339,39 @@ body {
     gap: 0.5em;
   }
 }
+
+@media (max-width: 992px) {
+  .navbar-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 250px;
+    flex-direction: column;
+    background: #fff;
+    padding: 2em 1.5em;
+    gap: 1.5em;
+    transition: 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-menu.show {
+    left: 0;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
