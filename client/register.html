@@ -64,63 +64,64 @@
       <p class="text-center mb-6">
         Tell us about yourself so we can find the perfect opportunities for you.
       </p>
-      <form id="registerForm" action="/api/register" method="POST" enctype="multipart/form-data" class="space-y-6">
-        <div>
-          <h2 class="text-2xl font-semibold mb-2">Personal Information</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input name="firstName" type="text" placeholder="First Name" required class="border px-3 py-2 rounded" />
-            <input name="lastName" type="text" placeholder="Last Name" required class="border px-3 py-2 rounded" />
-            <input name="email" type="email" placeholder="Email Address" required class="border px-3 py-2 rounded" />
-            <input name="phone" type="tel" placeholder="Phone Number" required class="border px-3 py-2 rounded" />
-          </div>
-        </div>
+      <form id="registerForm" action="/api/register" method="POST" enctype="multipart/form-data" class="space-y-6" onsubmit="return validateForm(event)">
+  <div>
+    <h2 class="text-2xl font-semibold mb-2">Personal Information</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <input name="firstName" type="text" placeholder="First Name" required minlength="2" pattern="[A-Za-z]+" class="border px-3 py-2 rounded" />
+      <input name="lastName" type="text" placeholder="Last Name" required minlength="2" pattern="[A-Za-z]+" class="border px-3 py-2 rounded" />
+      <input name="email" type="email" placeholder="Email Address" required class="border px-3 py-2 rounded" />
+      <input name="phone" type="tel" placeholder="Phone Number" required pattern="[0-9]{10}" title="Enter a 10-digit phone number" class="border px-3 py-2 rounded" />
+    </div>
+  </div>
 
-        <div>
-          <h2 class="text-2xl font-semibold mb-2">Professional Details</h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <input name="yearsExp" type="number" placeholder="Years of Experience" required class="border px-3 py-2 rounded" />
-            <input name="currentRole" type="text" placeholder="Current Role/Title" required class="border px-3 py-2 rounded" />
-            <input name="salaryRange" type="text" placeholder="Expected Salary Range" required class="border px-3 py-2 rounded" />
-            <input name="location" type="text" placeholder="Preferred Location" required class="border px-3 py-2 rounded" />
-          </div>
-          <textarea name="careerGoals" rows="4" placeholder="Tell us about your career goals…" required class="w-full border px-3 py-2 rounded mt-4"></textarea>
-        </div>
+  <div>
+    <h2 class="text-2xl font-semibold mb-2">Professional Details</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <input name="yearsExp" type="number" placeholder="Years of Experience" required min="0" max="50" class="border px-3 py-2 rounded" />
+      <input name="currentRole" type="text" placeholder="Current Role/Title" required minlength="2" class="border px-3 py-2 rounded" />
+      <input name="salaryRange" type="text" placeholder="Expected Salary Range" required pattern="^[0-9]+(k|K)?(\s*-\s*[0-9]+(k|K)?)?$" title="Example: 50000 or 50k - 70k" class="border px-3 py-2 rounded" />
+      <input name="location" type="text" placeholder="Preferred Location" required class="border px-3 py-2 rounded" />
+    </div>
+    <textarea name="careerGoals" rows="4" placeholder="Tell us about your career goals…" required minlength="10" class="w-full border px-3 py-2 rounded mt-4"></textarea>
+  </div>
 
-        <div>
-          <h2 class="text-2xl font-semibold mb-2">Resume Upload</h2>
-          <div class="border-dashed border-2 border-gray-300 rounded p-4 text-center">
-            <label class="block cursor-pointer">
-              <span class="text-gray-600">Upload Your Resume (PDF, DOC, DOCX up to 5MB)</span>
-              <input name="resume" type="file" accept=".pdf,.doc,.docx" required class="hidden" />
-            </label>
-          </div>
-        </div>
+  <div>
+    <h2 class="text-2xl font-semibold mb-2">Resume Upload</h2>
+    <div class="border-dashed border-2 border-gray-300 rounded p-4 text-center">
+      <label class="block cursor-pointer">
+        <span class="text-gray-600">Upload Your Resume (PDF, DOC, DOCX up to 5MB)</span>
+        <input name="resume" id="resumeInput" type="file" accept=".pdf,.doc,.docx" required class="hidden" />
+      </label>
+    </div>
+  </div>
 
-        <div class="space-y-2 text-sm">
-          <label class="flex items-center">
-            <input type="checkbox" name="agreeTOS" required class="mr-2" />
-            I agree to the <a href="#" class="text-blue-600 underline">Terms of Service</a>.
-          </label>
-          <label class="flex items-center">
-            <input type="checkbox" name="agreePrivacy" required class="mr-2" />
-            I’ve read and agree to the <a href="#" class="text-blue-600 underline">Privacy Policy</a>.
-          </label>
-        </div>
+  <div class="space-y-2 text-sm">
+    <label class="flex items-center">
+      <input type="checkbox" name="agreeTOS" required class="mr-2" />
+      I agree to the <a href="#" class="text-blue-600 underline">Terms of Service</a>.
+    </label>
+    <label class="flex items-center">
+      <input type="checkbox" name="agreePrivacy" required class="mr-2" />
+      I’ve read and agree to the <a href="#" class="text-blue-600 underline">Privacy Policy</a>.
+    </label>
+  </div>
 
-        <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900 transition" style="background-color: #1a72b2;">
-          Create My Profile →
-        </button>
+  <button type="submit" class="w-full bg-blue-800 text-white py-2 rounded hover:bg-blue-900 transition" style="background-color: #1a72b2;">
+    Create My Profile →
+  </button>
 
-        <div class="mt-8 bg-blue-50 text-black p-6 rounded">
-          <h2 class="text-lg font-semibold mb-2">What happens next?</h2>
-          <ul class="list-disc pl-5 space-y-1 text-sm">
-            <li>Our team will review your profile within 24 hours</li>
-            <li>We'll contact you to discuss your career goals</li>
-            <li>Start receiving matched job opportunities</li>
-            <li>Get personalized career coaching and support</li>
-          </ul>
-        </div>
-      </form>
+  <div class="mt-8 bg-blue-50 text-black p-6 rounded">
+    <h2 class="text-lg font-semibold mb-2">What happens next?</h2>
+    <ul class="list-disc pl-5 space-y-1 text-sm">
+      <li>Our team will review your profile within 24 hours</li>
+      <li>We'll contact you to discuss your career goals</li>
+      <li>Start receiving matched job opportunities</li>
+      <li>Get personalized career coaching and support</li>
+    </ul>
+  </div>
+</form>
+
     </main>
 
     <!-- footer -->
@@ -241,6 +242,31 @@
       document.getElementById("menu-icon").addEventListener("click", () => {
         document.getElementById("navbar-menu").classList.toggle("hidden");
       });
+
+function validateForm(event) {
+    const fileInput = document.getElementById("resumeInput");
+    const file = fileInput.files[0];
+
+    if (file) {
+      const validTypes = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+      const maxSize = 5 * 1024 * 1024; // 5 MB
+
+      if (!validTypes.includes(file.type)) {
+        alert("Please upload a valid resume format: PDF, DOC, or DOCX.");
+        event.preventDefault();
+        return false;
+      }
+
+      if (file.size > maxSize) {
+        alert("Resume file must be less than 5MB.");
+        event.preventDefault();
+        return false;
+      }
+    }
+
+    return true;
+  }
+
 
 
       const chatToggle = document.getElementById('chatToggle');
