@@ -656,14 +656,14 @@ body {
 
 .slider-container {
   position: relative;
-  max-width: 600px;
+  max-width: 750px;
   margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
   background: #fff;
   box-shadow: 0 4px 20px rgba(0,0,0,0.1);
   padding: 30px 20px;
-  min-height: 70px;
+  min-height: 50px;
   transition: transform 0.5s ease-in-out;
 }
 
@@ -813,7 +813,8 @@ body {
   font-size: 18px;
   border: none;
   outline: none;
-  background-color: #007bff;
+  /* background-color: #007bff; */
+  background-color: #25D366;
   color: white;
   cursor: pointer;
   padding: 10px;
