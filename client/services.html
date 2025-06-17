@@ -74,7 +74,7 @@
       <h3>Job Matching</h3>
       <p>Get connected with opportunities that match your skills, experience, and goals through our exclusive network.</p>
       <ul>
-        <li>Skill Assessment</li>
+        <li><a href="services.html" style="text-decoration: none; color: #fff;"></a>Skill Assessment</a></li>
         <li>Career Goals Alignment</li>
         <li>Exclusive Opportunities</li>
         <li>Perfect Matches</li>
@@ -150,8 +150,8 @@
     <h2>Ready to Accelerate Your Career?</h2>
     <p>Join hundreds of professionals who have successfully advanced their careers with our help.</p>
     <div class="cta-buttons">
-      <button><a href="./register.html">Get Started Today → </a></button>
-      <button>Learn More</button>
+      <button style="background-color: #fff;"><a href="./register.html" style="color: #1a72b2;">Get Started Today → </a></button>
+      <!-- <button>Learn More</button> -->
     </div>
   </section>
 
@@ -184,11 +184,11 @@
         <h4>Quick Links</h4>
         <ul
           style="list-style: none; padding: 0; line-height: 1.8; font-weight: 200; font-size: 16px; margin-top: 45px;">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Services</li>
-          <li>Contact</li>
-          <li>Register</li>
+          <li><a href="index.html" style="text-decoration: none; color: #fff;">Home</a></li>
+          <li><a href="about.html" style="text-decoration: none; color: #fff;">About Us</a></li>
+          <li><a href="services.html" style="text-decoration: none; color: #fff;">Services</a></li>
+          <li><a href="contect.html" style="text-decoration: none; color: #fff;">Contact</a></li>
+          <li><a href="register.html" style="text-decoration: none; color: #fff;">Register</a></li>
         </ul>
       </div>
 
@@ -197,11 +197,11 @@
         <h4>Our Services</h4>
         <ul
           style="list-style: none; padding: 0; line-height: 1.8; font-weight: 200; font-size: 16px; margin-top: 45px;">
-          <li>Resume Optimization</li>
-          <li>Interview Coaching</li>
-          <li>Job Matching</li>
-          <li>Career Guidance</li>
-          <li>Skill Assessment</li>
+          <li><a href="services.html" style="text-decoration: none; color: #fff;"></a>Resume Optimization</a></li>
+          <li><a href="services.html" style="text-decoration: none; color: #fff;"></a>Interview Coaching</a></li>
+          <li><a href="services.html" style="text-decoration: none; color: #fff;"></a>Job Matching</a></li>
+          <li><a href="services.html" style="text-decoration: none; color: #fff;"></a>Career Guidance</a></li>
+          <li><a href="services.html" style="text-decoration: none; color: #fff;"></a>Skill Assessment</a></li>
         </ul>
       </div>
 
@@ -245,7 +245,7 @@
 
         <!-- Header -->
         <div style="background-color: #0D1117; color: white; padding: 14px; font-weight: 600; font-size: 16px;">
-          PlaceXis Bot
+          Chat With PlaceXis Expert
         </div>
 
         <!-- Chat Body -->
@@ -263,21 +263,139 @@
         </div>
       </div>
     </div>
-  </footer>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><img src="./images/top.svg"></img></button> 
+</footer>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script>
     const menuIcon = document.getElementById("menu-icon");
     const navbarMenu = document.getElementById("navbar-menu");
 
-    menuIcon.addEventListener("click", () => {
-      navbarMenu.classList.toggle("show");
+    
+
+
+
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    let isChatOpen = false;
+
+    let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+
+
+
+    window.addEventListener("load", () => {
+      chatWindow.style.display = 'none';
+      isChatOpen = false;
     });
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 768) {
-        navbarMenu.classList.remove("show");
+
+    chatToggle.addEventListener('click', () => {
+      isChatOpen = !isChatOpen;
+      chatWindow.style.display = isChatOpen ? 'flex' : 'none';
+    });
+    const API_KEY = "AIzaSyAKWyFcFlT94XUhnNJDYC42x7TyvWnPk4U"; // 🔒 Replace with your actual Gemini API key
+
+    const placementKeywords = [
+      "resume", "interview", "placement", "job", "career", "cv",
+      "guidance", "hired", "skills", "assessment", "match", "recruitment"
+    ];
+
+    function isPlacementRelated(input) {
+      const lower = input.toLowerCase();
+      return placementKeywords.some(k => lower.includes(k));
+    }
+
+    async function getGeminiResponse(inputText) {
+      const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=" + API_KEY;
+
+      const payload = {
+        contents: [
+          {
+            parts: [{ text: inputText }]
+          }
+        ]
+      };
+
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+      const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, I couldn't understand that.";
+      return text;
+    }
+
+    // Called when user sends a message
+    async function sendMessage() {
+      const input = userInput.value.trim();
+      if (!input) return;
+
+      appendMessage("You", input, "user");
+      userInput.value = "";
+
+      if (!isPlacementRelated(input)) {
+        appendMessage("Bot", "I'm trained to answer only placement-related questions. Please ask about jobs, resumes, or interviews.", "bot");
+        return;
       }
-    });
+
+      appendMessage("Bot", "Typing...", "bot");
+
+      try {
+        const reply = await getGeminiResponse(input);
+
+        // Replace 'Typing...' with real response
+        const lastMsg = chatBody.querySelectorAll("div")[chatBody.querySelectorAll("div").length - 1];
+        lastMsg.innerHTML = `<div style="background-color: #E6E6E6; padding: 10px 14px; border-radius: 20px; max-width: 75%; font-size: 14px;">${reply}</div>`;
+      } catch (err) {
+        appendMessage("Bot", "Oops! Couldn't connect to Gemini. Try again later.", "bot");
+        console.error(err);
+      }
+    }
+
+    function appendMessage(sender, message, type) {
+      const msgWrapper = document.createElement("div");
+      msgWrapper.style.display = "flex";
+      msgWrapper.style.justifyContent = type === "user" ? "flex-end" : "flex-start";
+
+      const bubble = document.createElement("div");
+      bubble.style.maxWidth = "75%";
+      bubble.style.padding = "10px 14px";
+      bubble.style.borderRadius = "20px";
+      bubble.style.marginBottom = "4px";
+      bubble.style.whiteSpace = "pre-wrap";
+      bubble.style.lineHeight = "1.5";
+      bubble.style.fontSize = "14px";
+      bubble.style.boxShadow = "0 1px 4px rgba(0,0,0,0.1)";
+      bubble.style.backgroundColor = type === "user" ? "#DCF8C6" : "#E6E6E6";
+      bubble.style.color = "#111";
+
+      bubble.innerText = message;
+      msgWrapper.appendChild(bubble);
+      chatBody.appendChild(msgWrapper);
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
   </script>
 </body>
 

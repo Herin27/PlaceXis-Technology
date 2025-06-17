@@ -285,6 +285,34 @@ body {
   color: #444;
 }
 
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  left: 50px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 4px;
+  
+}
+
+#myBtn:hover {
+  background-color: #fff;
+}
+
+#myBtn img{
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+}
+
 /* Responsive - Mobile & Tablet */
 @media (max-width: 992px) {
   .navbar-menu {
