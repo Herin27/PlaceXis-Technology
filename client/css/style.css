@@ -822,10 +822,6 @@ body {
   
 }
 
-#myBtn:hover {
-  background-color: #fff;
-  border: 1px solid #25D366;
-}
 
 #myBtn img{
   width: 30px;
