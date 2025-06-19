@@ -60,6 +60,7 @@ body {
   margin-top: 20px;
   border-radius: 10px;
 }
+
 .nav-item {
   padding: 10px 40px;
   font-weight: 550;
@@ -71,19 +72,22 @@ body {
   transition: all 0.3s;
   width: 100%;
 }
+
 .nav-item.active {
   background-color: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05);
 }
+
 .content-section {
   padding: 20px;
 }
+
 .card {
   background: #fff;
   padding: 15px;
   margin: 20px 0;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -159,7 +163,8 @@ body {
 }
 
 /* Recent Activity */
-.recent, .actions {
+.recent,
+.actions {
   background-color: #fff;
   padding: 20px;
   border-radius: 14px;
@@ -206,9 +211,11 @@ body {
 .green {
   background-color: #28a745;
 }
+
 .blue {
   background-color: #3f51b5;
 }
+
 .yellow {
   background-color: #ffc107;
 }
@@ -311,10 +318,21 @@ body {
   font-size: 16px;
 }
 
-.action-icon.view { color: #3498db; }
-.action-icon.edit { color: #2ecc71; }
-.action-icon.block { color: #f39c12; }
-.action-icon.delete { color: #e74c3c; }
+.action-icon.view {
+  color: #3498db;
+}
+
+.action-icon.edit {
+  color: #2ecc71;
+}
+
+.action-icon.block {
+  color: #f39c12;
+}
+
+.action-icon.delete {
+  color: #e74c3c;
+}
 
 /* Resume Button */
 #userTable td .resume-link {
@@ -339,7 +357,8 @@ body {
   margin-top: 10px;
 }
 
-#sliderTable th, #sliderTable td {
+#sliderTable th,
+#sliderTable td {
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
@@ -565,7 +584,7 @@ body {
 
 /* contact section */
 
-  /* Contact Section Styling */
+/* Contact Section Styling */
 #contacts {
   padding: 20px;
   background-color: #f9f9f9;
@@ -626,7 +645,13 @@ body {
 
 /* Responsive Table */
 @media screen and (max-width: 768px) {
-  #contacts table, #contacts thead, #contacts tbody, #contacts th, #contacts td, #contacts tr {
+
+  #contacts table,
+  #contacts thead,
+  #contacts tbody,
+  #contacts th,
+  #contacts td,
+  #contacts tr {
     display: block;
   }
 
@@ -656,13 +681,15 @@ body {
     color: #555;
   }
 }
-.logout-btn a{
+
+.logout-btn a {
   text-decoration: none;
   color: inherit;
   display: block;
   width: 100%;
   height: 100%;
 }
+
 .export-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -703,7 +730,8 @@ body {
   margin-top: 10px;
 }
 
-#adminReviews th, #adminReviews td {
+#adminReviews th,
+#adminReviews td {
   padding: 8px 12px;
   border: 1px solid #ccc;
   text-align: left;
@@ -918,15 +946,15 @@ button.decline-btn:hover {
   }
 
   @media (max-width: 600px) {
-  #addSliderSection {
-    padding: 15px;
-  }
+    #addSliderSection {
+      padding: 15px;
+    }
 
-  #sliderForm input,
-  #sliderForm button {
-    font-size: 14px;
-    padding: 10px;
+    #sliderForm input,
+    #sliderForm button {
+      font-size: 14px;
+      padding: 10px;
+    }
   }
-}
 
 }

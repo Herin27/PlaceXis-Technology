@@ -6,15 +6,15 @@ menuIcon.addEventListener("click", () => {
 });
 
 // Disable right-click
-document.addEventListener('contextmenu', function (e) {
+document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
 
 // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-document.addEventListener('keydown', function (e) {
+document.addEventListener("keydown", function (e) {
   if (
-    e.key === "F12" || 
-    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
     (e.ctrlKey && e.key === "U")
   ) {
     e.preventDefault();
@@ -81,7 +81,6 @@ questions.forEach((btn) => {
 
 //
 
-
 window.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("prevReview");
   const nextBtn = document.getElementById("nextReview");
@@ -91,43 +90,46 @@ window.addEventListener("DOMContentLoaded", () => {
 
   async function loadApprovedReviews() {
     try {
-      const res = await fetch('/api/approved-reviews');
+      const res = await fetch("/api/approved-reviews");
       const reviews = await res.json();
 
-      const container = document.getElementById('reviewSlider');
-      container.innerHTML = '';
+      const container = document.getElementById("reviewSlider");
+      container.innerHTML = "";
 
       reviews.forEach((review, index) => {
-        const div = document.createElement('div');
-        div.classList.add('review-card');
-        if (index === 0) div.classList.add('active');
+        const div = document.createElement("div");
+        div.classList.add("review-card");
+        if (index === 0) div.classList.add("active");
 
         div.innerHTML = `
           <h3>${review.name}</h3>
-          <div class="rating">${'★'.repeat(review.rating)}${'☆'.repeat(5 - review.rating)}</div>
+          <div class="rating">${"★".repeat(review.rating)}${"☆".repeat(
+          5 - review.rating
+        )}</div>
           <p>${review.message}</p>
         `;
         container.appendChild(div);
       });
 
-      reviewElements = document.querySelectorAll('.review-card');
+      reviewElements = document.querySelectorAll(".review-card");
     } catch (err) {
-      console.error('Error loading reviews:', err);
+      console.error("Error loading reviews:", err);
     }
   }
 
   function showReview(index) {
     reviewElements.forEach((el, i) => {
-      el.classList.toggle('active', i === index);
+      el.classList.toggle("active", i === index);
     });
   }
 
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + reviewElements.length) % reviewElements.length;
+  prevBtn.addEventListener("click", () => {
+    currentIndex =
+      (currentIndex - 1 + reviewElements.length) % reviewElements.length;
     showReview(currentIndex);
   });
 
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener("click", () => {
     currentIndex = (currentIndex + 1) % reviewElements.length;
     showReview(currentIndex);
   });

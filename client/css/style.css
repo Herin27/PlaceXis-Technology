@@ -86,8 +86,8 @@ body {
   color: #444;
   font-size: 14px;
 }
-.mobile-contact
-{
+
+.mobile-contact {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,6 +95,7 @@ body {
 
   gap: 0.5em;
 }
+
 .get-started-btn {
   padding: 0.5em 1em;
   background-color: #1a72b2;
@@ -106,15 +107,18 @@ body {
   transition: 0.3s;
   width: 120px;
 }
+
 .get-started-btn a {
   color: #fff;
   text-decoration: none;
 }
-.learn-more a{
+
+.learn-more a {
   color: #000000;
   text-decoration: none;
 }
-.learn-more a:hover{
+
+.learn-more a:hover {
   color: #ffffff;
   text-decoration: none;
 }
@@ -124,7 +128,8 @@ body {
   background-color: #073278;
   color: #fff;
 }
-.get-started-btn a:hover{
+
+.get-started-btn a:hover {
   color: #fff;
   text-decoration: none;
 }
@@ -593,7 +598,7 @@ body {
   padding: 0px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .review-card h4 {
@@ -661,7 +666,7 @@ body {
   overflow: hidden;
   border-radius: 12px;
   background: #fff;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 30px 20px;
   min-height: 50px;
   transition: transform 0.5s ease-in-out;
@@ -693,7 +698,8 @@ body {
 }
 
 .review-card .rating {
-  color: #FFD700; /* gold stars */
+  color: #FFD700;
+  /* gold stars */
   font-size: 1.2em;
 }
 
@@ -718,8 +724,15 @@ body {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -819,11 +832,11 @@ body {
   cursor: pointer;
   padding: 10px;
   border-radius: 4px;
-  
+
 }
 
 
-#myBtn img{
+#myBtn img {
   width: 30px;
   height: 30px;
   vertical-align: middle;

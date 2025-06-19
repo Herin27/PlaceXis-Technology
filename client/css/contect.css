@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 }
+
 #myBtn {
   display: none;
   position: fixed;
@@ -19,14 +20,14 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 4px;
-  
+
 }
 
 #myBtn:hover {
   background-color: #fff;
 }
 
-#myBtn img{
+#myBtn img {
   width: 30px;
   height: 30px;
   vertical-align: middle;
@@ -114,8 +115,8 @@ body {
   color: #444;
   font-size: 14px;
 }
-.mobile-contact
-{
+
+.mobile-contact {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,6 +124,7 @@ body {
 
   gap: 0.5em;
 }
+
 .get-started-btn {
   padding: 0.5em 1em;
   background-color: #1a72b2;
@@ -134,15 +136,18 @@ body {
   transition: 0.3s;
   width: 120px;
 }
+
 .get-started-btn a {
   color: #fff;
   text-decoration: none;
 }
-.learn-more a{
+
+.learn-more a {
   color: #000000;
   text-decoration: none;
 }
-.learn-more a:hover{
+
+.learn-more a:hover {
   color: #ffffff;
   text-decoration: none;
 }
@@ -152,7 +157,8 @@ body {
   background-color: #073278;
   color: #fff;
 }
-.get-started-btn a:hover{
+
+.get-started-btn a:hover {
   color: #fff;
   text-decoration: none;
 }
@@ -203,23 +209,25 @@ body {
   gap: 30px;
 }
 
-.contact-form, .contact-info {
+.contact-form,
+.contact-info {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
   flex: 1 1 45%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   max-width: 600px;
 }
 
-.contact-form h2
-{
+.contact-form h2 {
   margin-bottom: 20px;
 }
+
 .contact-info h2 {
   margin-bottom: 20px;
   margin-top: 10px;
 }
+
 .contact-info p {
   margin-bottom: 15px;
   font-size: 16px;
@@ -259,23 +267,26 @@ body {
   border: 1px solid #bbeebb;
   margin-top: 30px;
   border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   max-width: 500px;
   margin: 20px 0px;
   display: flex;
   width: 100%;
 }
+
 .whatsapp-box img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 15px;
 }
+
 .whatsapp-box strong {
   font-size: 20px;
   margin-bottom: 10px;
   color: #002d87;
 }
+
 .whatsapp-box p {
   font-size: 16px;
   color: #333;
@@ -292,6 +303,7 @@ body {
   margin-top: 10px;
   margin-left: 50px;
 }
+
 .whatsapp-btn a {
   color: white;
   text-decoration: none;
@@ -301,11 +313,13 @@ body {
   text-align: center;
   margin-top: 60px;
 }
+
 .map-section h2 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #1a72b2;
 }
+
 .map-section p {
   font-size: 16px;
   color: #555;
@@ -335,14 +349,14 @@ body {
   cursor: pointer;
   padding: 10px;
   border-radius: 4px;
-  
+
 }
 
 #myBtn:hover {
   background-color: #fff;
 }
 
-#myBtn img{
+#myBtn img {
   width: 30px;
   height: 30px;
   vertical-align: middle;

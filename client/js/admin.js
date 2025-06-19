@@ -1,13 +1,13 @@
 // Disable right-click
-document.addEventListener('contextmenu', function (e) {
+document.addEventListener("contextmenu", function (e) {
   e.preventDefault();
 });
 
 // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-document.addEventListener('keydown', function (e) {
+document.addEventListener("keydown", function (e) {
   if (
-    e.key === "F12" || 
-    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) || 
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
     (e.ctrlKey && e.key === "U")
   ) {
     e.preventDefault();
@@ -276,7 +276,7 @@ async function loadContacts() {
   }
 }
 
-  loadContacts();
+loadContacts();
 
 document.addEventListener("DOMContentLoaded", () => {
   showSection("dashboard"); // or trigger based on a button

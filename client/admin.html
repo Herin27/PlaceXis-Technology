@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Dashboard</title><link rel="icon" type="image/x-icon" href="./images/pt.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="icon" type="image/x-icon" href="./images/pt.jpg">
   <link rel="stylesheet" href="./css/admin.css" />
 </head>
+
 <body>
   <div class="top-bar">
     <div>
@@ -78,91 +81,91 @@
 
     <!-- Users Section -->
     <section id="users" class="content-section" style="display: none;">
-  <h2>User Management</h2>
-  <p>Manage registered users and their accounts</p>
+      <h2>User Management</h2>
+      <p>Manage registered users and their accounts</p>
 
-  <div class="user-card">
-    <h3>All Users</h3>
-    <input type="text" id="searchInput" placeholder="🔍 Search users..." onkeyup="filterUsers()" />
+      <div class="user-card">
+        <h3>All Users</h3>
+        <input type="text" id="searchInput" placeholder="🔍 Search users..." onkeyup="filterUsers()" />
 
-    <div style="margin: 10px 0;">
-      Total Users: <span id="totalUsers">0</span>
-    </div>
+        <div style="margin: 10px 0;">
+          Total Users: <span id="totalUsers">0</span>
+        </div>
 
-    <table id="userTable">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Experience</th>
-          <th>Role</th>
-          <th>Location</th>
-          <th>Resume</th>
-          <th>Signup Date</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="userTableBody">
-        <!-- Data will be injected here -->
-      </tbody>
-    </table>
-  </div>
-</section>
+        <table id="userTable">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Experience</th>
+              <th>Role</th>
+              <th>Location</th>
+              <th>Resume</th>
+              <th>Signup Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody">
+            <!-- Data will be injected here -->
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-<!-- slider section -->
+    <!-- slider section -->
 
-<section id="sliders" class="content-section" style="display: none;">
-  <h2>Slider Management</h2>
-  <p>Manage home page sliders</p>
+    <section id="sliders" class="content-section" style="display: none;">
+      <h2>Slider Management</h2>
+      <p>Manage home page sliders</p>
 
-  <div class="slider-card">
-    <h3>All Sliders</h3>
-    <input type="text" id="sliderSearchInput" placeholder="🔍 Search sliders..." onkeyup="filterSliders()" />
+      <div class="slider-card">
+        <h3>All Sliders</h3>
+        <input type="text" id="sliderSearchInput" placeholder="🔍 Search sliders..." onkeyup="filterSliders()" />
 
-    <div style="margin: 10px 0;">
-      Total Sliders: <span id="totalSliders">0</span>
-    </div>
+        <div style="margin: 10px 0;">
+          Total Sliders: <span id="totalSliders">0</span>
+        </div>
 
-    <table id="sliderTable">
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>Title</th>
-          <th>Description</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="sliderTableBody">
-        <!-- Injected by JS -->
-      </tbody>
-    </table>
-  </div>
-<div id="editSliderModal" class="modal" style="display: none;">
-  <div class="modal-content">
-    <h3>Edit Slider</h3>
-    <form id="editSliderForm">
-      <input type="hidden" id="editSliderId" />
-      <input type="text" id="editTitle" placeholder="Slider Title" />
-      <input type="text" id="editDescription" placeholder="Slider Description" />
-      <input type="file" id="editImage" accept="image/*" />
-      <button type="submit">💾 Save Changes</button>
-      <button type="button" onclick="closeEditModal()">❌ Cancel</button>
-    </form>
-  </div>
-</div>
+        <table id="sliderTable">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="sliderTableBody">
+            <!-- Injected by JS -->
+          </tbody>
+        </table>
+      </div>
+      <div id="editSliderModal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <h3>Edit Slider</h3>
+          <form id="editSliderForm">
+            <input type="hidden" id="editSliderId" />
+            <input type="text" id="editTitle" placeholder="Slider Title" />
+            <input type="text" id="editDescription" placeholder="Slider Description" />
+            <input type="file" id="editImage" accept="image/*" />
+            <button type="submit">💾 Save Changes</button>
+            <button type="button" onclick="closeEditModal()">❌ Cancel</button>
+          </form>
+        </div>
+      </div>
 
-<section id="addSliderSection">
-  <h3>Add New Slider</h3>
-  <form id="sliderForm" enctype="multipart/form-data">
-    <input type="text" name="title" placeholder="Slider Title" />
-    <input type="text" name="description" placeholder="Slider Description" />
-    <input type="file" name="image" accept="image/*" required />
-    <button type="submit">➕ Add Slider</button>
-  </form>
-  <hr />
-</section>
-</section>
+      <section id="addSliderSection">
+        <h3>Add New Slider</h3>
+        <form id="sliderForm" enctype="multipart/form-data">
+          <input type="text" name="title" placeholder="Slider Title" />
+          <input type="text" name="description" placeholder="Slider Description" />
+          <input type="file" name="image" accept="image/*" required />
+          <button type="submit">➕ Add Slider</button>
+        </form>
+        <hr />
+      </section>
+    </section>
 
 
 
@@ -178,19 +181,24 @@
 
     <!-- Reviews Section -->
     <section id="adminReviews" class="content-section" style="display: none;">
-  <h2>User Reviews</h2>
-  <p>All submitted reviews</p>
-  <div>Total Reviews: <span id="totalReviews">0</span></div>
+      <h2>User Reviews</h2>
+      <p>All submitted reviews</p>
+      <div>Total Reviews: <span id="totalReviews">0</span></div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th><th>Email</th><th>Rating</th><th>Message</th><th>Status</th><th>Actions</th>
-      </tr>
-    </thead>
-    <tbody id="reviewTableBody"></tbody>
-  </table>
-</section>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Rating</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="reviewTableBody"></tbody>
+      </table>
+    </section>
 
 
 
@@ -222,42 +230,47 @@
 
     <!-- Messages Section -->
     <section id="contacts" class="content-section" style="display: none;">
-  <h2>Contact Messages</h2>
-  <p>All submitted contact forms</p>
+      <h2>Contact Messages</h2>
+      <p>All submitted contact forms</p>
 
-  <div>Total Contacts: <span id="totalContacts">0</span></div>
+      <div>Total Contacts: <span id="totalContacts">0</span></div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th><th>Email</th><th>Phone</th><th>Message</th><th>Submitted</th>
-      </tr>
-    </thead>
-    <tbody id="contactTableBody"></tbody> 
-  </table>
-</section>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+            <th>Submitted</th>
+          </tr>
+        </thead>
+        <tbody id="contactTableBody"></tbody>
+      </table>
+    </section>
 
 
 
 
 
-  <script>
-    function showSection(sectionId) {
-      // Hide all sections
-      document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
+    <script>
+      function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.content-section').forEach(sec => sec.style.display = 'none');
 
-      // Remove active from all nav-items
-      document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+        // Remove active from all nav-items
+        document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
 
-      // Show selected section
-      document.getElementById(sectionId).style.display = 'block';
+        // Show selected section
+        document.getElementById(sectionId).style.display = 'block';
 
-      // Set active nav
-      const activeBtn = Array.from(document.querySelectorAll('.nav-item'))
-        .find(btn => btn.textContent.toLowerCase().includes(sectionId));
-      if (activeBtn) activeBtn.classList.add('active');
-    }
-  </script>
-  <script src="./js/admin.js"></script>
+        // Set active nav
+        const activeBtn = Array.from(document.querySelectorAll('.nav-item'))
+          .find(btn => btn.textContent.toLowerCase().includes(sectionId));
+        if (activeBtn) activeBtn.classList.add('active');
+      }
+    </script>
+    <script src="./js/admin.js"></script>
 </body>
+
 </html>

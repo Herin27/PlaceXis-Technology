@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
 }
+
 #myBtn {
   display: none;
   position: fixed;
@@ -19,14 +20,14 @@
   cursor: pointer;
   padding: 10px;
   border-radius: 4px;
-  
+
 }
 
 #myBtn:hover {
   background-color: #fff;
 }
 
-#myBtn img{
+#myBtn img {
   width: 30px;
   height: 30px;
   vertical-align: middle;
@@ -38,7 +39,8 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background: #f9f9f9;
 }
-a{
+
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -118,8 +120,8 @@ a{
   color: #444;
   font-size: 14px;
 }
-.mobile-contact
-{
+
+.mobile-contact {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,6 +129,7 @@ a{
 
   gap: 0.5em;
 }
+
 .get-started-btn {
   padding: 0.5em 1em;
   background-color: #1a72b2;
@@ -138,15 +141,18 @@ a{
   transition: 0.3s;
   width: 120px;
 }
+
 .get-started-btn a {
   color: #fff;
   text-decoration: none;
 }
-.learn-more a{
+
+.learn-more a {
   color: #000000;
   text-decoration: none;
 }
-.learn-more a:hover{
+
+.learn-more a:hover {
   color: #ffffff;
   text-decoration: none;
 }
@@ -156,7 +162,8 @@ a{
   background-color: #073278;
   color: #fff;
 }
-.get-started-btn a:hover{
+
+.get-started-btn a:hover {
   color: #fff;
   text-decoration: none;
 }
@@ -316,7 +323,8 @@ a{
   gap: 20px;
   flex-wrap: wrap;
 }
-.cta-buttons a{
+
+.cta-buttons a {
   text-decoration: none;
   color: #1a72b2;
 }
@@ -356,14 +364,14 @@ a{
   cursor: pointer;
   padding: 10px;
   border-radius: 4px;
-  
+
 }
 
 #myBtn:hover {
   background-color: #fff;
 }
 
-#myBtn img{
+#myBtn img {
   width: 30px;
   height: 30px;
   vertical-align: middle;
