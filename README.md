@@ -1,11 +1,6 @@
-Here's a complete `README.md` file template for your **Placement Helping Website** project. It includes project overview, features, technologies used, installation steps, folder structure, and usage instructions.
 
----
-
-### ✅ `README.md`
-
-```markdown
 # 🎓 Placement Helping Website
+```markdown
 
 A full-featured web application designed to help students get placed by providing a platform for resume submission, review management, admin tools, and user engagement.
 
